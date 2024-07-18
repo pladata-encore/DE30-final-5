@@ -1,6 +1,5 @@
 package com.springboot.moov.controller;
 
-import com.springboot.moov.UserDto;
 import com.springboot.moov.entity.User;
 import com.springboot.moov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

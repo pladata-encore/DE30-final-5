@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather-Based Movie Recommendations</title>
+</head>
+<body>
+<h1>Weather-Based Movie Recommendations</h1>
+<ul>
+    <li th:each="movie : ${movies}">
+        <p th:text="${movie.title}"></p>
+        <p th:text="${movie.genre}"></p>
+        <p th:text="${movie.rating}"></p>
+    </li>
+</ul>
+<a href="/">Go Back</a>
+</body>
+</html>

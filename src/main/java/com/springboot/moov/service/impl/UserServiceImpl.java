@@ -1,6 +1,5 @@
 package com.springboot.moov.service.impl;
 
-import com.springboot.moov.UserDto;
 import com.springboot.moov.entity.User;
 import com.springboot.moov.repository.UserRepository;
 import com.springboot.moov.service.UserService;
