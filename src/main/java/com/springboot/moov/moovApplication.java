@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan(basePackages = {"com.springboot.moov"})
-public class moovApplication {
+public class MoovApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(moovApplication.class, args);
+		SpringApplication.run(MoovApplication.class, args);
 	}
 }
