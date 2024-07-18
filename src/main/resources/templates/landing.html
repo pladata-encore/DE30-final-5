@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page Slideshow</title>
+    <link rel="stylesheet" href="/css/landing.css"> <!-- landing.css의 경로를 확인하고 수정 -->
+    <style>
+        /* 추가적인 CSS 스타일링이 필요한 경우 여기에 추가 */
+    </style>
+</head>
+<body>
+<main class="gallery" id="mainGallery">
+    <!-- 첫 번째 슬라이드 컨테이너 -->
+    <div class="slides" id="slides1">
+        <div class="slides-container">
+            <ul>
+                <li th:each="landing, iterStat : ${landings}" th:if="${iterStat.index < 10}" class="slide">
+                    <img th:src="${landing.posterUrl}" alt="Poster Image" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 두 번째 슬라이드 컨테이너 -->
+    <div class="slides" id="slides2">
+        <div class="slides-container">
+            <ul>
+                <li th:each="landing, iterStat : ${sortedAndDistinctByReleaseDate}" th:if="${iterStat.index < 10}" class="slide">
+                    <img th:src="${landing.posterUrl}" alt="Poster Image" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 정중앙에 추가할 이미지 -->
+    <img src="/images/moov_logo.png" alt="Center Image" class="center-image"> <!-- 이미지 경로를 확인하고 수정 -->
+</main>
+
+<script src="/js/landing.js"></script> <!-- landing.js의 경로를 확인하고 수정 -->
+
+<script>
+    document.getElementById('mainGallery').addEventListener('click', function() {
+        window.location.href = '/login'; // 클릭 시 로그인 페이지로 이동
+    });
+</script>
+
+</body>
+</html>
