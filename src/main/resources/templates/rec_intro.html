@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Html Generated</title>
+    <meta name="description" content="Figma htmlGenerator">
+    <meta name="author" content="htmlGenerator">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rec_intro.css">
+
+    <style>
+        /*
+          Figma Background for illustrative/preview purposes only.
+          You can remove this style tag with no consequence
+        */
+        body {
+            background: #E5E5E5;
+        }
+
+        /* 초기에 숨겨진 검색 창 */
+        .search-box {
+            display: none;
+            position: absolute; /* 검색 창이 다른 요소 위에 나타나도록 */
+            top: 10%; /* 원하는 위치로 조정 */
+            left: 50%;
+            transform: translate(-50%, 0);
+            background: #ffffff;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        .search-box button {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="e119_1736">
+    <div class="e119_1737"></div>
+    <div class="e119_1738"></div>
+    <div class="e119_1739">
+        <div class="e119_1740"></div>
+        <div class="e119_1741"></div>
+        <div class="e119_1742"></div>
+        <div class="e119_1743"></div>
+        <div class="e119_1744">
+            <div class="e119_1745"></div>
+            <div class="e119_1746"></div>
+        </div>
+    </div>
+    <div class="e119_1747">
+        <div class="e119_1748"></div>
+        <div class="e119_1749">
+            <div class="e119_1750">
+                <div class="e119_1751"></div>
+                <div class="e119_1752"></div>
+            </div>
+        </div>
+        <span class="e119_1753">예) 찾는 추천이 없으시면 검색해보세요.</span>
+        <!-- 추가된 링크 -->
+        <a href="/rec-feel-1">Go to Feeling Recommendation 1</a>
+    </div>
+    <span class="e119_1776">장르별</span>
+    <span class="e119_1777">기분별</span>
+    <span class="e119_1778">날씨별</span>
+    <span class="e119_1779">영화 추천 받으실래요?</span>
+    <div class="e119_1781"></div>
+    <div class="e119_1782"></div>
+</div>
+
+<!-- 검색 버튼 -->
+<button id="toggle-search">검색</button>
+
+<!-- 검색 창 -->
+<div class="search-box">
+    <form id="search-form" action="/movies" method="get">
+        <input type="text" name="query" placeholder="영화 제목을 입력하세요">
+        <button type="submit">검색</button>
+    </form>
+</div>
+
+<script>
+    // 검색 버튼 클릭 시 검색 창을 펼치거나 숨기는 JavaScript 코드
+    document.getElementById('toggle-search').addEventListener('click', function() {
+        var searchBox = document.querySelector('.search-box');
+        searchBox.style.display = (searchBox.style.display === 'block') ? 'none' : 'block';
+    });
+</script>
+
+</body>
+</html>
