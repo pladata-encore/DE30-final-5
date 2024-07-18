@@ -59,12 +59,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100%; /* 최대 너비를 100%로 설정 */
-    max-height: 100%; /* 최대 높이를 100%로 설정 */
-    width: auto; /* 너비 자동 조정 */
-    height: auto; /* 높이 자동 조정 */
+    width: 230px; /* 너비를 183px로 고정 */
+    height: 290px; /* 높이를 231px로 고정 */
 }
 
 .center-image img {
+    width: 100%; /* 부모 요소에 맞춰 너비를 100%로 설정 */
+    height: 100%; /* 부모 요소에 맞춰 높이를 100%로 설정 */
     object-fit: contain; /* 이미지 비율을 유지하면서 요소에 맞춰 표시 */
 }

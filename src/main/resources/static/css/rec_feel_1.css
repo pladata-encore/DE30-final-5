@@ -1,32 +1,10 @@
 :root {
-    --roboto-mono-font: "Roboto Mono";
-    --sf-pro-font: "SF Pro";
-    --abril-fatface-font: "Abril Fatface";
-    --yisunshin-bold-font: "YiSunShin Bold";
     --inter-font: "Inter";
 }
 
-/* 예시로 각 폰트를 사용하는 방법 */
 body {
-    font-family: var(--roboto-mono-font);
+    font-family: var(--inter-font), sans-serif;
 }
-
-h1 {
-    font-family: var(--sf-pro-font);
-}
-
-h2 {
-    font-family: var(--abril-fatface-font);
-}
-
-h3 {
-    font-family: var(--yisunshin-bold-font);
-}
-
-p {
-    font-family: var(--inter-font);
-}
-
 
 .119_1836 {
 	overflow:hidden;
