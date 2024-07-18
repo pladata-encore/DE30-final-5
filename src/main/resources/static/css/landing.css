@@ -59,8 +59,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 230px; /* 너비를 183px로 고정 */
-    height: 290px; /* 높이를 231px로 고정 */
+    width: 183px; /* 너비를 183px로 고정 */
+    height: 231px; /* 높이를 231px로 고정 */
 }
 
 .center-image img {
