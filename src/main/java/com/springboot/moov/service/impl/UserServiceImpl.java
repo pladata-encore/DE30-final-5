@@ -1,7 +1,8 @@
 package com.springboot.moov.service.impl;
 
-import com.springboot.moov.entity.User;
-import com.springboot.moov.repository.UserRepository;
+import com.springboot.moov.data.dto.UserDto;
+import com.springboot.moov.data.entity.User;
+import com.springboot.moov.data.repository.UserRepository;
 import com.springboot.moov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,7 @@
 package com.springboot.moov.controller;
 
-import com.springboot.moov.entity.User;
+import com.springboot.moov.data.dto.UserDto;
+import com.springboot.moov.data.entity.User;
 import com.springboot.moov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,9 +27,9 @@ public class UserController {
 
     @GetMapping("/{email}")
     public ResponseEntity<UserDto> getUserByEmail(@PathVariable String email) {
-        UserDto userDto = userService.getUserByEmail(email);
-        if (userDto != null) {
-            return ResponseEntity.ok(userDto);
+        UserDto UserDto = userService.getUserByEmail(email);
+        if (UserDto != null) {
+            return ResponseEntity.ok(UserDto);
         } else {
             return ResponseEntity.notFound().build();
         }

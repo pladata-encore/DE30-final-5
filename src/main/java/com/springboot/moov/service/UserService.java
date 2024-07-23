@@ -1,6 +1,7 @@
 package com.springboot.moov.service;
 
-import com.springboot.moov.entity.User;
+import com.springboot.moov.data.dto.UserDto;
+import com.springboot.moov.data.entity.User;
 
 import java.util.List;
 
