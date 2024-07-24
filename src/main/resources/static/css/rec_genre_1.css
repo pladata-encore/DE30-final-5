@@ -1,0 +1,313 @@
+:root {
+    --inter-font: "Inter";
+}
+
+.119_1975 {
+	overflow:hidden;
+}
+.e119_1975 { 
+	width:1440px;
+	height:1024px;
+	position:absolute;
+}
+.e736_688 { 
+	width:4096px;
+	height:2913px;
+	position:absolute;
+	left:-1414px;
+	top:-930px;
+	background-image:url(images/background_image_1.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e119_1976 { 
+	background-image:linear-gradient(0deg, rgba(182.31170922517776, 182.31170922517776, 182.31170922517776, 0.5) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.30000001192092896) 55.3999662399292%,rgba(255, 248.99717330932617, 148.7499949336052, 0.75) 100%) ;
+	width:1440px;
+	height:426px;
+	position:absolute;
+	left:0px;
+	top:290px;
+}
+.e119_1995 { 
+	width:372px;
+	height:84.21826171875px;
+	position:absolute;
+	left:1040px;
+	top:33px;
+}
+.e119_1996 { 
+	border-radius:500px;
+	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
+	width:82.6221694946289px;
+	height:84.21826171875px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.e119_1997 { 
+	width:67.69071960449219px;
+	height:68.99836730957031px;
+	position:absolute;
+	left:7.160584926605225px;
+	top:6.737490653991699px;
+	background-image:url(images/rec_genre_1/home.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e119_1998 { 
+	border-radius:500px;
+	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
+	width:82.6221694946289px;
+	height:84.21826171875px;
+	position:absolute;
+	left:140.458251953125px;
+	top:0px;
+}
+.e119_1999 { 
+	width:42.30670166015625px;
+	height:43.12398147583008px;
+	position:absolute;
+	left:162.45773315429688px;
+	top:22.424470901489258px;
+	background-image:url(images/rec_genre_1/search.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e119_2000 { 
+	width:82.6221694946289px;
+	height:84.21826171875px;
+	position:absolute;
+	left:289.3778381347656px;
+	top:0px;
+}
+.e119_2001 { 
+	border-radius:500px;
+	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
+	width:82.6221694946289px;
+	height:84.21826171875px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.e119_2002 { 
+	width:47.38350296020508px;
+	height:48.298858642578125px;
+	position:absolute;
+	left:17.768840789794922px;
+	top:17.249591827392578px;
+	background-image:url(images/rec_genre_1/mypage.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e119_2025 { 
+	color:rgba(30.00000011175871, 30.00000011175871, 30.00000011175871, 1);
+	width:155px;
+	height:86px;
+	position:absolute;
+	left:25px;
+	top:207px;
+	font-family:Inter;
+	text-align:left;
+	font-size:57px;
+	letter-spacing:-2.200000047683716;
+}
+.e119_2027 { 
+	width:70px;
+	height:70px;
+	position:absolute;
+	left:180px;
+	top:215px;
+	background-image:url(images/rec_genre_1/genre.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e577_629 { 
+	width:150px;
+	height:190px;
+	position:absolute;
+	left:5px;
+	top:-4.547473508864641e-13px;
+	background-image:url(images/rec_genre_1/genre.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e662_643 { 
+	width:88px;
+	height:87px;
+	position:absolute;
+	left:80px;
+	top:402px;
+	background-image:url(images/rec_genre_1/sf.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e662_644 { 
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:35px;
+	top:700px;
+	background-image:url(images/rec_genre_1/crime.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e662_645 { 
+	width:140px;
+	height:140px;
+	position:absolute;
+	left:442px;
+	top:446px;
+	background-image:url(images/rec_genre_1/scary.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e662_646 { 
+	width:96px;
+	height:96px;
+	position:absolute;
+	left:391px;
+	top:271px;
+	background-image:url(images/rec_genre_1/romance.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e662_647 { 
+	width:87px;
+	height:87px;
+	position:absolute;
+	left:1284px;
+	top:291px;
+	background-image:url(images/rec_genre_1/comedy.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e662_648 { 
+	width:219px;
+	height:219px;
+	position:absolute;
+	left:646px;
+	top:623px;
+	background-image:url(images/rec_genre_1/documentary.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_673 { 
+	width:64px;
+	height:64px;
+	position:absolute;
+	left:962px;
+	top:221px;
+	background-image:url(images/rec_genre_1/animation.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_674 { 
+	width:96px;
+	height:96px;
+	position:absolute;
+	left:845px;
+	top:446px;
+	background-image:url(images/rec_genre_1/action.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_675 { 
+	width:60px;
+	height:60px;
+	position:absolute;
+	left:1328px;
+	top:581px;
+	background-image:url(images/rec_genre_1/mistery.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_676 { 
+	width:96px;
+	height:96px;
+	position:absolute;
+	left:1067px;
+	top:626px;
+	background-image:url(images/rec_genre_1/music.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_677 { 
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:1247px;
+	top:804px;
+	background-image:url(images/rec_genre_1/fantasy.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_679 { 
+	width:85px;
+	height:85px;
+	position:absolute;
+	left:512px;
+	top:854px;
+	background-image:url(images/rec_genre_1/cowboy.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_680 { 
+	width:64px;
+	height:64px;
+	position:absolute;
+	left:221px;
+	top:800px;
+	background-image:url(images/rec_genre_1/adventure.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_681 { 
+	width:64px;
+	height:64px;
+	position:absolute;
+	left:375px;
+	top:697px;
+	background-image:url(images/rec_genre_1/drama.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_682 { 
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:666px;
+	top:272px;
+	background-image:url(images/rec_genre_1/handcuffs.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_684 { 
+	width:80px;
+	height:80px;
+	position:absolute;
+	left:239px;
+	top:527px;
+	background-image:url(images/rec_genre_1/family.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e716_685 { 
+	width:96px;
+	height:96px;
+	position:absolute;
+	left:1067px;
+	top:453px;
+	background-image:url(images/rec_genre_1/war.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e736_687 { 
+	width:171px;
+	height:85px;
+	position:absolute;
+	left:876px;
+	top:797px;
+	background-image:url(images/rec_genre_1/history.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
