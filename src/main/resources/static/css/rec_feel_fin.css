@@ -1,244 +1,126 @@
 :root {
     --inter-font: "Inter";
 }
-
+/* 기본 스타일 */
 body {
-    font-family: var(--inter-font);
+    background: #E5E5E5;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-.119_1918 {
-	overflow:hidden;
+/* 영화 세부사항 컨테이너 */
+.movie-details {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.e119_1918 { 
-	background-color:rgba(126.00000008940697, 48.000000938773155, 147.00000643730164, 0.10000000149011612);
-	width:1440px;
-	height:1024px;
-	position:absolute;
+
+#poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
-.e119_1919 { 
-	box-shadow:2px 3px 4px rgba(0, 0, 0, 0.25);
-	transform: rotate(4.194551066813954e-15deg);
-	width:8px;
-	height:131px;
-	position:absolute;
-	left:1392px;
-	top:585px;
+
+h1 {
+    font-size: 24px;
+    margin: 0 0 10px;
 }
-.e119_1920 { 
-	transform: rotate(4.194551066813954e-15deg);
-	background-color:rgba(255, 255, 255, 1);
-	width:8px;
-	height:43px;
-	position:absolute;
-	left:0px;
-	top:22px;
-	border-top-left-radius:12px;
-	border-top-right-radius:12px;
-	border-bottom-left-radius:12px;
-	border-bottom-right-radius:12px;
+
+p {
+    margin: 5px 0;
+    font-size: 18px;
 }
-.e119_1921 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:70px;
+
+/* 페이지 레이아웃 스타일 */
+.789_693 {
+    overflow: hidden;
 }
-.e119_1922 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:91px;
+
+.e789_693 {
+    width: 1440px;
+    height: 1024px;
+    position: absolute;
 }
-.e119_1923 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:102px;
+
+.e789_694 {
+    width: 1440px;
+    height: 1024px;
+    position: absolute;
+    left: -5px;
+    top: 0px;
+    background-image: url(images/background_nogradation_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.e119_1924 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:114px;
+
+.e789_695 {
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(0deg);
+    width: 8px;
+    height: 131px;
+    position: absolute;
+    left: 1392px;
+    top: 585px;
 }
-.e119_1925 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:125px;
+
+.e789_696 {
+    transform: rotate(0deg);
+    background-color: rgba(255, 255, 255, 1);
+    width: 8px;
+    height: 43px;
+    position: absolute;
+    left: 0px;
+    top: 22px;
+    border-radius: 12px;
 }
-.e119_1926 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:81px;
+
+.e789_697 {
+    transform: rotate(0deg);
+    border-radius: 500px;
+    background-color: rgba(255, 255, 255, 1);
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 1px;
+    top: 70px;
 }
-.e119_1927 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:11px;
+
+/* 여기에 e789_698 - e789_704의 스타일이 반복됨 */
+
+/* 컨테이너 스타일 */
+.e789_705 {
+    width: 439.65px;
+    height: 97.65px;
+    position: absolute;
+    left: 500px;
+    top: 868px;
 }
-.e119_1928 { 
-	transform: rotate(4.194551066813954e-15deg);
-	border-radius:500px;
-	background-color:rgba(255, 255, 255, 1);
-	width:6px;
-	height:6px;
-	position:absolute;
-	left:1px;
-	top:0px;
+
+.e789_706 {
+    border-radius: 500px;
+    background-image: linear-gradient(0deg, rgba(198, 105, 78, 1) 0%, rgba(252, 207, 188, 0.78) 50.6%, rgba(246, 247, 233, 1) 100%);
+    width: 97.65px;
+    height: 97.65px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
-.e119_1929 { 
-	width:439.64666748046875px;
-	height:97.64666748046875px;
-	position:absolute;
-	left:500px;
-	top:868px;
+
+.e789_707 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 8.46px;
+    top: 7.81px;
+    background-image: url(images/pngegg_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.e119_1930 { 
-	border-radius:500px;
-	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
-	width:97.64666748046875px;
-	height:97.64666748046875px;
-	position:absolute;
-	left:0px;
-	top:0px;
-}
-.e119_1931 { 
-	width:80px;
-	height:80px;
-	position:absolute;
-	left:8.46270751953125px;
-	top:7.81170654296875px;
-	background-image:url(images/pngegg_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e119_1932 { 
-	border-radius:500px;
-	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
-	width:97.64666748046875px;
-	height:97.64666748046875px;
-	position:absolute;
-	left:166px;
-	top:0px;
-}
-.e119_1933 { 
-	width:50px;
-	height:50px;
-	position:absolute;
-	left:192px;
-	top:26px;
-	background-image:url(images/pikpng_com_searchicon_png_1092659_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e119_1934 { 
-	width:97.64666748046875px;
-	height:97.64666748046875px;
-	position:absolute;
-	left:342px;
-	top:0px;
-}
-.e119_1935 { 
-	border-radius:500px;
-	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
-	width:97.64666748046875px;
-	height:97.64666748046875px;
-	position:absolute;
-	left:0px;
-	top:0px;
-}
-.e119_1936 { 
-	width:56px;
-	height:56px;
-	position:absolute;
-	left:21px;
-	top:20px;
-	background-image:url(images/my_page_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e119_1937 { 
-	width:1440px;
-	height:440px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	background-image:url(images/don_poster_goldposter_com_2_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
-}
-.e119_1938 { 
-	background-image:linear-gradient(0deg, rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 0.5) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.2800000011920929) 49.39999580383301%,rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 0.25) 100%) ;
-	width:854px;
-	height:44px;
-	position:absolute;
-	left:296px;
-	top:473px;
-}
-.e119_1945 { 
-	color:rgba(0, 0, 0, 1);
-	width:355px;
-	height:98px;
-	position:absolute;
-	left:297px;
-	top:541px;
-	font-family:Inter;
-	text-align:left;
-	font-size:20px;
-	letter-spacing:0;
-}
-.e198_569 { 
-	color:rgba(0, 0, 0, 1);
-	width:1118px;
-	height:23px;
-	position:absolute;
-	left:297px;
-	top:484px;
-	font-family:Inter;
-	text-align:left;
-	font-size:20px;
-	letter-spacing:0;
-}
-.e119_1947 { 
-	color:rgba(102.41170182824135, 102.41170182824135, 102.41170182824135, 1);
-	width:1052px;
-	height:181px;
-	position:absolute;
-	left:194px;
-	top:667px;
-	font-family:Inter;
-	text-align:left;
-	font-size:20px;
-	letter-spacing:0;
-}
+
+.e789_708 {
+    border-radius: 500px;
+    background-image: linear-gradient(0deg, rgba(198, 105, 78, 1) 0%, rgba(252, 207,

@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RecIntroController {
 
+    @GetMapping("/rec_intro")
+    public String showRecIntro() {
+        return "rec_intro"; // src/main/resources/templates/rec_intro.html
+    }
 
-    @GetMapping("/rec-intro")
-    public String showRecIntroPage() {
-        return "rec_intro"; // templates/rec_intro.html 파일명과 일치해야 합니다.
+    @GetMapping("/rec_feel_1")
+    public String showRecFeel1() {
+        return "rec_feel_1"; // src/main/resources/templates/rec_feel_1.html
     }
 }
