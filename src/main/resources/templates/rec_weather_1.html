@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨별</title>
+    <link rel="stylesheet" href="/css/rec_weather_1.css">
+</head>
+<body>
+<header>
+    <h1>
+        날씨별
+        <img src="/images/rec_weather_1/16695242.png" alt="날씨 이미지" id="header-image">
+    </h1>
+</header>
+<section>
+    <div class="button-container">
+        <button id="current-weather-btn">
+            <div class="main-text">
+                <span>실시간 날씨 기반</span>
+                <span>영화 추천</span>
+            </div>
+            <div id="weather-info" style="display: none;">
+                <span>현재 날씨:</span>
+                <img id="weather-icon" src="" alt="날씨 아이콘">
+            </div>
+        </button>
+        <button id="select-weather-btn">
+            <span>직접 날씨 선택</span>
+            <span>영화 추천</span>
+        </button>
+    </div>
+</section>
+<script src="/js/rec_weather_1.js"></script>
+</body>
+</html>

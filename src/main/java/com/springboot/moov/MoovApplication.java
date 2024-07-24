@@ -2,13 +2,12 @@ package com.springboot.moov;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"com.springboot.moov.data.entity"})
+@PropertySource("classpath:application.properties")
 public class MoovApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MoovApplication.class, args);
 	}
 }
-

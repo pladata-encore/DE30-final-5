@@ -1,72 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-    function setupSlideshow(slidesContainer, direction) {
-        const slidesList = slidesContainer.querySelector('ul');
-        const slides = Array.from(slidesList.querySelectorAll('.slide'));
-        const totalSlides = slides.length;
+document.addEventListener("DOMContentLoaded", function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
 
-        if (totalSlides === 0) return;
-
-        // 첫 번째 슬라이드와 마지막 슬라이드를 복사하여 무한 루프 효과 생성
-        const firstSlideClone = slides[0].cloneNode(true);
-        const lastSlideClone = slides[totalSlides - 1].cloneNode(true);
-        slidesList.appendChild(firstSlideClone);
-        slidesList.insertBefore(lastSlideClone, slides[0]);
-
-        const allSlides = slidesList.querySelectorAll('.slide');
-        const slideHeight = slides[0].clientHeight;
-
-        // 슬라이드 컨테이너 높이 설정
-        slidesContainer.style.height = `${slideHeight}px`;
-
-        // 슬라이드 리스트 초기 위치 설정
-        let currentIndex = 1;
-        slidesList.style.transform = `translateY(-${currentIndex * slideHeight}px)`;
-
-        // 슬라이드가 넘어가는 중인지 여부를 나타내는 플래그
-        let isTransitioning = false;
-
-        // 슬라이드를 다음으로 넘기는 함수
-        function moveToNextSlide() {
-            if (!isTransitioning) {
-                isTransitioning = true;
-
-                if (direction === 'down') {
-                    currentIndex++;
-                } else if (direction === 'up') {
-                    currentIndex--;
-                }
-
-                slidesList.style.transition = 'transform 0.5s ease';
-                slidesList.style.transform = `translateY(-${currentIndex * slideHeight}px)`;
-
-                // 슬라이드 전환이 끝나고 무한 루프 효과를 위해 인덱스 조정
-                setTimeout(() => {
-                    if (currentIndex === totalSlides + 1) {
-                        slidesList.style.transition = 'none';
-                        currentIndex = 1;
-                        slidesList.style.transform = `translateY(-${currentIndex * slideHeight}px)`;
-                    } else if (currentIndex === 0) {
-                        slidesList.style.transition = 'none';
-                        currentIndex = totalSlides;
-                        slidesList.style.transform = `translateY(-${currentIndex * slideHeight}px)`;
+            // Lat과 Lon 파라미터를 포함하여 서버에 요청
+            fetch(`/weather?lat=${lat}&lon=${lon}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
                     }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Weather data:', data); // 디버깅을 위한 로그
 
-                    setTimeout(() => {
-                        isTransitioning = false;
-                    }, 50); // transition이 끝나기 전에 짧은 지연시간 설정
-                }, 500); // transition 시간과 동일하게 설정
-            }
-        }
+                    // 아이콘 URL 생성
+                    const weatherIconId = data.weather[0].icon;
+                    const weatherIconUrl = `http://openweathermap.org/img/wn/${weatherIconId}.png`;
 
-        // 자동 슬라이드 시작
-        setInterval(moveToNextSlide, 3000);
+                    // 아이콘 이미지 업데이트
+                    const weatherIconElement = document.getElementById('weather-icon');
+                    weatherIconElement.src = weatherIconUrl;
+
+                    // 날씨 설명 업데이트 (옵션)
+                    const weatherDescriptionElement = document.getElementById('weather-description');
+                    weatherDescriptionElement.textContent = data.weather[0].description;
+                })
+                .catch(error => console.error('Error fetching weather data:', error));
+        }, function(error) {
+            console.error('Error getting location:', error);
+        });
+    } else {
+        console.error('Geolocation is not supported by this browser.');
     }
-
-    // 첫 번째 슬라이드 컨테이너 설정 (아래로 슬라이드)
-    const slidesContainer1 = document.querySelector('#slides1 .slides-container');
-    setupSlideshow(slidesContainer1, 'down');
-
-    // 두 번째 슬라이드 컨테이너 설정 (위로 슬라이드)
-    const slidesContainer2 = document.querySelector('#slides2 .slides-container');
-    setupSlideshow(slidesContainer2, 'up');
 });
