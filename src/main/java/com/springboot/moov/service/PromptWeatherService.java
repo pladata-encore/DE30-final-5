@@ -16,7 +16,7 @@ public class PromptWeatherService {
 
     private final RestTemplate restTemplate;
 
-    public PromWeatherService(RestTemplate restTemplate) {
+    public PromptWeatherService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
