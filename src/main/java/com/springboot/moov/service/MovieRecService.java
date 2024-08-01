@@ -14,7 +14,7 @@ public class MovieRecService {
     private MoviesRepository moviesRepository;
 
     @Autowired
-    private WeatherService weatherService;
+    private PromptWeatherService weatherService;
 
     public List<MovieDto> recommendMovies(String location) {
         String weather = weatherService.getWeather(location);
