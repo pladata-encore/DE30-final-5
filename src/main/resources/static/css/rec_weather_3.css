@@ -1,0 +1,98 @@
+/* 기본 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* 전역 스타일 */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #E5E5E5;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* 중앙 정렬 */
+}
+
+.container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url('/images/background_image.png'); /* 배경 이미지 경로 */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 로고 이미지 컨테이너 */
+.logo-container {
+    position: absolute;
+    z-index: 1; /* 헤더 위에 로고를 배치 */
+}
+
+/* 로고 이미지 스타일링 */
+#logo-image {
+    width: 170px; /* 로고 이미지 크기 조정 */
+    height: auto;
+}
+
+/* 기존 헤더 스타일 */
+header {
+    position: absolute;
+    top: 200px; /* 상단 여백 조정 */
+    left: 25px;
+    display: flex;
+    align-items: center;
+    z-index: 0; /* 로고 아래로 배치 */
+}
+
+/* 제목 스타일링 */
+header h1 {
+    font-size: 57px;
+    color: rgba(30, 30, 30, 1);
+    letter-spacing: -2.2px;
+    margin: 0;
+}
+
+/* 날씨 이미지 스타일링 */
+#header-image {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+}
+
+/* 인트로 텍스트 스타일링 */
+.intro-text {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+    position: absolute;
+    top: 260px; /* 헤더 아래 위치 조정 */
+    left: 25px; /* 왼쪽 정렬 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    width: calc(100% - 50px); /* 좌우 여백을 고려한 너비 설정 */
+}
+
+/* 날씨 아이템 스타일 */
+.weather-selection {
+    position: absolute;
+    top: 370px; /* 인트로 텍스트 아래 위치 조정 */
+    left: 0;
+    right: 0;
+    height: 600px; /* 충분한 공간 제공 */
+    overflow: hidden;
+    position: relative; /* 위치 기준을 설정하기 위해 relative로 변경 */
+}
+
+.weather-item {
+    font-size: 27px; /* 아이템 글자 크기 조정 */
+    cursor: pointer;
+    text-align: center;
+    position: absolute; /* 아이템들을 절대 위치로 설정 */
+}
+
+/* 아이템 hover 상태 */
+.weather-item:hover {
+    background-color: #f5f0a9; /* 배경색 변화 */
+    color: #fff; /* 글자 색상 변경 */
+    transform: scale(1.05); /* 버튼 확대 */
+    transition: transform 0.5s ease, background-color 0.5s ease; /* 부드러운 전환 효과 */
+    border-radius: 10px; /* 경계선 둥글게 */
+}

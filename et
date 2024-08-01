@@ -1,0 +1,16 @@
+[33m878ff41[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{0}: commit (merge): Merge remote-tracking branch 'origin/master'
+[33ma994b17[m HEAD@{1}: commit (merge): Merge remote-tracking branch 'origin/master'
+[33md029d74[m HEAD@{2}: commit: weather
+[33macbfabc[m HEAD@{3}: commit: weather
+[33ma60ec3b[m HEAD@{4}: commit: weather
+[33m5ab30ec[m HEAD@{5}: commit: weather
+[33m59a9786[m HEAD@{6}: commit: db_connect
+[33m35a8ecc[m HEAD@{7}: commit: test
+[33mc0ca818[m HEAD@{8}: commit (merge): Merge remote-tracking branch 'origin/master'
+[33m6fba1e0[m HEAD@{9}: commit (merge): Merge remote-tracking branch 'origin/master'
+[33mfdefd68[m HEAD@{10}: rebase (abort): returning to refs/heads/master
+[33mbcfec1b[m[33m ([m[1;31mmoov/master[m[33m)[m HEAD@{11}: rebase (start): checkout origin/master
+[33mfdefd68[m HEAD@{12}: commit: Save local changes before rebase
+[33ma1689cc[m HEAD@{13}: commit: test
+[33m5aa7570[m HEAD@{14}: commit (merge): Merge branch 'master' of https://github.com/pladata-encore/DE30-final-5
+[33m961d0c1[m HEAD@{15}: commit (initial): Committing my changes before pulling

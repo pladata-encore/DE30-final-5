@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨별</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rec_weather_1.css">
+</head>
+<body>
+<div class="container">
+    <!-- 로고 컨테이너 추가 -->
+    <div class="logo-container">
+        <img src="/images/moov_logo.png" alt="Moov Logo" id="logo-image">
+    </div>
+    <header>
+        <h1>날씨별</h1>
+        <img src="/images/weather.png" alt="날씨 이미지" id="header-image">
+    </header>
+    <nav>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/home.png" alt="Home">
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/search.png" alt="Search">
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/my_page_1.png" alt="Profile">
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="option">
+            <h2>실시간 날씨 기반 영화 추천</h2>
+            <div id="weather-info">
+                <div>
+                    <span id="location"></span>
+                    <span id="temperature"></span>
+                </div>
+                <img id="weather-icon" src="" alt="날씨 아이콘">
+            </div>
+        </div>
+        <div class="option">
+            <h2>직접 날씨 선택 영화 추천</h2>
+        </div>
+    </section>
+</div>
+<script src="/js/rec_weather_1.js"></script>
+</body>
+</html>

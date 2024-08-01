@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 선택</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rec_weather_3.css">
+</head>
+<body>
+<div class="container">
+    <!-- 로고 컨테이너 추가 -->
+    <div class="logo-container">
+        <img src="/images/moov_logo.png" alt="Moov Logo" id="logo-image">
+    </div>
+    <header>
+        <h1>날씨별</h1>
+        <img src="/images/weather.png" alt="날씨 이미지" id="header-image">
+    </header>
+    <main>
+        <p class="intro-text">날씨를 선택해 주세요.</p>
+        <section class="weather-selection">
+            <div class="weather-item" data-weather="thunderstorm">Thunderstorm (천둥번개)</div>
+            <div class="weather-item" data-weather="drizzle">Drizzle (이슬비)</div>
+            <div class="weather-item" data-weather="rain">Rain (비)</div>
+            <div class="weather-item" data-weather="snow">Snow (눈)</div>
+            <div class="weather-item" data-weather="clear">Clear (맑음)</div>
+            <div class="weather-item" data-weather="clouds">Clouds (흐림)</div>
+            <div class="weather-item" data-weather="windy">Windy (바람이 많이 부는)</div>
+            <div class="weather-item" data-weather="fog">Fog (안개)</div>
+            <div class="weather-item" data-weather="dust">Dust (먼지)</div>
+            <div class="weather-item" data-weather="typhoon">Typhoon (태풍)</div>
+            <div class="weather-item" data-weather="other">Other (그 외)</div>
+        </section>
+    </main>
+</div>
+
+<script src="/js/rec_weather_3.js"></script>
+</body>
+</html>

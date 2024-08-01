@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class PromptWeatherService {
+public class WeatherService {
 
     @Value("${weather.api.url}")
     private String apiUrl;
@@ -16,7 +16,7 @@ public class PromptWeatherService {
 
     private final RestTemplate restTemplate;
 
-    public PromptWeatherService(RestTemplate restTemplate) {
+    public WeatherService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
