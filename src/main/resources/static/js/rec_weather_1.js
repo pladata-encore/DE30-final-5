@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // 기존 코드
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             const lat = position.coords.latitude;
@@ -12,8 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         const iconCode = data.weather[0].icon;
                         const weatherIconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
                         document.getElementById('weather-icon').src = weatherIconUrl;
+                        document.getElementById('location').textContent = data.name; // 도시 이름
+                        document.getElementById('temperature').textContent = `${data.main.temp}°C`; // 온도
                     } else {
-                        console.error('Weather icon data is missing');
+                        console.error('Weather data is missing');
                     }
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
@@ -23,4 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.error('Geolocation is not supported by this browser.');
     }
+
+    // 클릭 이벤트 처리 추가
+    const optionHeaders = document.querySelectorAll('.option h2');
+    optionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            if (this.textContent.includes('직접 날씨 선택')) {
+                window.location.href = '/rec_weather_3';
+            } else {
+                window.location.href = '/rec_weather_2';
+            }
+        });
+    });
 });
+

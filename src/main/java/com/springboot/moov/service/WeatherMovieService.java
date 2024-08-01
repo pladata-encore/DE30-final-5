@@ -4,7 +4,9 @@ import com.springboot.moov.data.dto.WeatherMovieDTO;
 import com.springboot.moov.data.repository.WeatherMovieRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class WeatherMovieService {
@@ -28,13 +30,13 @@ public class WeatherMovieService {
                 genre = "로맨스, 범죄";
                 break;
             case "snow":
-                genre = "가족, 애니메이션";
+                genre = "가족, 애니메이션, 판타지";
                 break;
             case "clear":
                 genre = "모험, 코미디, 드라마";
                 break;
             case "clouds":
-                genre = "공포, 미스터리";
+                genre = "미스터리, 드라마, 공포";
                 break;
             case "windy":
                 genre = "역사, 서부";
@@ -52,7 +54,15 @@ public class WeatherMovieService {
                 genre = "";
                 break;
         }
-        return weatherMovieRepository.findMoviesByGenre(genre);
+        // 장르를 쉼표로 분리하여 리스트로 변환
+        List<String> genreList = Arrays.asList(genre.split(",\\s*"));
+
+        // 각 장르에 대해 쿼리 실행 및 결과 결합
+        List<WeatherMovieDTO> movies = genreList.stream()
+                .flatMap(g -> weatherMovieRepository.findMoviesByGenre(g).stream())
+                .distinct() // 중복 제거
+                .collect(Collectors.toList());
+
+        return movies;
     }
 }
-

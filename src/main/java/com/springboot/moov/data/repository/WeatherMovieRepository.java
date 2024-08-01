@@ -19,7 +19,7 @@ public class WeatherMovieRepository {
     }
 
     public List<WeatherMovieDTO> findMoviesByGenre(String genre) {
-        String sql = "SELECT id, title, genre FROM movies WHERE genre LIKE ?";
+        String sql = "SELECT id, title, genre, posterUrl FROM movies WHERE genre LIKE ?";
         return jdbcTemplate.query(sql, new Object[]{ "%" + genre + "%" }, new MovieRowMapper());
     }
 
@@ -29,7 +29,8 @@ public class WeatherMovieRepository {
             return new WeatherMovieDTO(
                     rs.getLong("id"),
                     rs.getString("title"),
-                    rs.getString("genre")
+                    rs.getString("genre"),
+                    rs.getString("posterUrl")
             );
         }
     }

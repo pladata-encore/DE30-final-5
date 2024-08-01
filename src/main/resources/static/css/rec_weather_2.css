@@ -1,0 +1,117 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #E5E5E5; /* 배경색 */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url('/images/background_image.png'); /* 배경 이미지 경로 */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 로고 이미지 컨테이너 */
+.logo-container {
+    position: absolute;
+    z-index: 1; /* 헤더 위에 로고를 배치 */
+}
+
+/* 로고 이미지 스타일링 */
+#logo-image {
+    width: 170px; /* 로고 이미지 크기 조정 */
+    height: auto;
+}
+
+/* 기존 헤더 스타일 */
+header {
+    position: absolute;
+    top: 200px; /* 상단 여백 조정 */
+    left: 25px;
+    display: flex;
+    align-items: center;
+    z-index: 0; /* 로고 아래로 배치 */
+}
+
+/* 제목 스타일링 */
+header h1 {
+    font-size: 57px;
+    color: rgba(30, 30, 30, 1);
+    letter-spacing: -2.2px;
+    margin: 0;
+}
+
+/* 날씨 이미지 스타일링 */
+#header-image {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+}
+
+/* 소개 부분 스타일링 */
+.intro {
+    position: absolute;
+    top: 260px; /* 상단 여백 조정 */
+    left: 25px;
+    width: 90%;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 0 auto;
+}
+
+.weather-condition {
+    font-size: 24px; /* 날씨 상태 텍스트 크기 조정 */
+    font-weight: bold;
+    display: inline-block; /* 아이콘과 텍스트를 한 줄로 배치 */
+    align-items: center; /* 아이콘과 텍스트를 중앙 정렬 */
+    padding: 0; /* 내부 여백 제거 */
+}
+
+.weather-icon {
+    vertical-align: middle;
+    width: 50px; /* 아이콘 크기 조정 */
+    height: 50px; /* 아이콘 크기 조정 */
+    padding: 0; /* 내부 여백 제거 */
+}
+
+.movie-gallery {
+    position: absolute;
+    top: 360px; /* 상단 여백 조정 */
+    left: 50%; /* 화면 중앙에 위치시키기 위한 설정 */
+    transform: translateX(-50%); /* 정확히 중앙에 맞추기 위한 설정 */
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 한 줄에 6개씩 배치 */
+    gap: 10px; /* 포스터 사이 간격 */
+    justify-content: center; /* 가로 방향 중앙 정렬 */
+}
+
+.movie-gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* 포스터 최대 크기 */
+    border-radius: 10px; /* 둥근 모서리 */
+}
+
+.movie-gallery img:hover {
+    transform: scale(1.05); /* 마우스 오버 시 포스터 확대 효과 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 마우스 오버 시 그림자 효과 */
+}
+
+/* 페이지가 스크롤 가능하도록 설정 */
+html, body {
+    height: 100%;
+}
+
+.container {
+    overflow-y: auto; /* 수직 스크롤 활성화 */
+    max-height: 100vh; /* 최대 높이를 뷰포트 높이로 설정 */
+}
