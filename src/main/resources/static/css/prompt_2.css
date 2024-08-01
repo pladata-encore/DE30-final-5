@@ -1,0 +1,28 @@
+/* prompt_2.css */
+
+:root {
+    --inter-font: "Inter";
+}
+
+/* 포스터 이미지에 대한 스타일 정의 */
+.poster-image {
+    width: 100%; /* 또는 적절한 크기 */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+/* 영화 제목에 대한 스타일 정의 */
+.movie-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* 영화 설명에 대한 스타일 정의 */
+.movie-description {
+    font-size: 1rem;
+    color: #555;
+}
+
