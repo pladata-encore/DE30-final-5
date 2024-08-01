@@ -13,7 +13,7 @@ public class MovieRowMapper implements RowMapper<Movies> {
         Movies movies = new Movies();
         movies.setId(rs.getLong("id"));
         movies.setTitle(rs.getString("title"));
-        movies.setOriginalLanguage(rs.getString("originalLanguage"));
+        movies.setOriginal_language((rs.getString("originalLanguage")));
         movies.setGenre(rs.getString("genre"));
         movies.setRuntime(rs.getInt("runtime"));
         movies.setRating(rs.getFloat("rating"));
@@ -26,9 +26,9 @@ public class MovieRowMapper implements RowMapper<Movies> {
             movies.setReleaseDate(null); // 또는 적절한 기본값 설정
         }
 
-        movies.setPosterUrl(rs.getString("posterUrl"));
+        movies.setPoster_url((rs.getString("posterUrl")));
         movies.setPlot(rs.getString("synopsis"));
-        movies.setTrailer(rs.getString("trailer"));
+        movies.setTrailer_url(rs.getString("trailer"));
         movies.setActors(rs.getString("cast"));
         movies.setDirector(rs.getString("director"));
         movies.setSeries(rs.getString("series"));

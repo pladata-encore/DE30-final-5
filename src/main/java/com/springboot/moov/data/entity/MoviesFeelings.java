@@ -1,58 +1,30 @@
 package com.springboot.moov.data.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import java.math.BigDecimal;
-import java.util.Date;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "movies_feelings", schema = "movies_feelings")
+@Table(name = "movies_feelings")
 public class MoviesFeelings {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String title;
-
-    private Integer runtime;
-
-    private String cast;
-
-    private String director;
-
-    @Temporal(TemporalType.DATE)
-    private Date releasedDate;
-
-    private String originalLanguage;
-
-    @Column(precision = 3, scale = 1)
-    private BigDecimal ratings;
-
-    @Column(columnDefinition = "TEXT")
-    private String plot;
-
+    private String description;
     private String genre;
+    private Double ratings;
 
-    private String trailerUrl;
+    // 기본 생성자
+    public MoviesFeelings() {}
 
-    private String posterUrl;
+    // 매개변수 있는 생성자
+    public MoviesFeelings(String title, String description, String genre, Double ratings) {
+        this.title = title;
+        this.description = description;
+        this.genre = genre;
+        this.ratings = ratings;
+    }
 
-    private String keyword;
-
-    private String feelings1;
-
-    private String feelings2;
-
-    // Getters and Setters
-
+    // Getter and Setter
     public Long getId() {
         return id;
     }
@@ -69,60 +41,12 @@ public class MoviesFeelings {
         this.title = title;
     }
 
-    public Integer getRuntime() {
-        return runtime;
+    public String getDescription() {
+        return description;
     }
 
-    public void setRuntime(Integer runtime) {
-        this.runtime = runtime;
-    }
-
-    public String getCast() {
-        return cast;
-    }
-
-    public void setCast(String cast) {
-        this.cast = cast;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public Date getReleasedDate() {
-        return releasedDate;
-    }
-
-    public void setReleasedDate(Date releasedDate) {
-        this.releasedDate = releasedDate;
-    }
-
-    public String getOriginalLanguage() {
-        return originalLanguage;
-    }
-
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
-    }
-
-    public BigDecimal getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(BigDecimal ratings) {
-        this.ratings = ratings;
-    }
-
-    public String getPlot() {
-        return plot;
-    }
-
-    public void setPlot(String plot) {
-        this.plot = plot;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getGenre() {
@@ -133,43 +57,22 @@ public class MoviesFeelings {
         this.genre = genre;
     }
 
-    public String getTrailerUrl() {
-        return trailerUrl;
+    public Double getRatings() {
+        return ratings;
     }
 
-    public void setTrailerUrl(String trailerUrl) {
-        this.trailerUrl = trailerUrl;
+    public void setRatings(Double ratings) {
+        this.ratings = ratings;
     }
 
-    public String getPosterUrl() {
-        return posterUrl;
-    }
-
-    public void setPosterUrl(String posterUrl) {
-        this.posterUrl = posterUrl;
-    }
-
-    public String getKeyword() {
-        return keyword;
-    }
-
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
-
-    public String getFeelings1() {
-        return feelings1;
-    }
-
-    public void setFeelings1(String feelings1) {
-        this.feelings1 = feelings1;
-    }
-
-    public String getFeelings2() {
-        return feelings2;
-    }
-
-    public void setFeelings2(String feelings2) {
-        this.feelings2 = feelings2;
+    @Override
+    public String toString() {
+        return "MoviesFeelings{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", genre='" + genre + '\'' +
+                ", ratings=" + ratings +
+                '}';
     }
 }

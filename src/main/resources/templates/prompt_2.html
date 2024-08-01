@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prompt_2.css">
+    <title>Movie Recommendations</title>
+</head>
+<body>
+<div class="movie-container">
+    <!-- JavaScript를 사용하여 동적으로 추천 영화 데이터를 가져옵니다. -->
+    <div id="movies-container"></div>
+</div>
+
+<script>
+    // 영화 데이터를 API로부터 가져와서 HTML에 추가하는 함수
+    async function fetchMovies() {
+        const location = "Seoul"; // 예시로 서울을 사용
+        const response = await fetch(`/api/recommendations?location=${location}`);
+        const movies = await response.json();
+
+        const container = document.getElementById('movies-container');
+        container.innerHTML = ''; // 이전 영화 데이터 삭제
+
+        movies.forEach(movie => {
+            const movieElement = document.createElement('div');
+            movieElement.className = 'movie-item';
+
+            const posterElement = document.createElement('img');
+            posterElement.className = 'poster-image';
+            posterElement.src = movie.posterUrl; // `posterUrl` 필드 사용
+            posterElement.alt = `${movie.title} Poster`;
+
+            const titleElement = document.createElement('h2');
+            titleElement.className = 'movie-title';
+            titleElement.textContent = movie.title;
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.className = 'movie-description';
+            descriptionElement.textContent = movie.description;
+
+            movieElement.appendChild(posterElement);
+            movieElement.appendChild(titleElement);
+            movieElement.appendChild(descriptionElement);
+
+            container.appendChild(movieElement);
+        });
+    }
+
+    // 페이지 로드 시 영화 데이터를 가져옵니다.
+    window.onload = fetchMovies;
+</script>
+</body>
+</html>

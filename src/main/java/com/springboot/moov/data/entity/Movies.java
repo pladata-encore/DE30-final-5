@@ -10,14 +10,14 @@ import java.time.LocalDate;
 public class Movies {
     private Long id;
     private String title;
-    private String originalLanguage;
+    private String original_language;
     private String genre;
     private int runtime;
     private float rating;
     private LocalDate releaseDate;
-    private String posterUrl;
+    private String poster_url;
     private String plot;
-    private String trailer;
+    private String trailer_url;
     private String actors;
     private String director;
     private String series;

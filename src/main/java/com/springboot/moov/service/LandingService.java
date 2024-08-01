@@ -1,6 +1,6 @@
 package com.springboot.moov.service;
 
-import com.springboot.moov.data.dto.LandingDTO;
+import com.springboot.moov.data.dto.LandingDto;
 import com.springboot.moov.data.entity.Movies;
 import com.springboot.moov.data.repository.MoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +19,18 @@ public class LandingService {
         this.moviesRepository = moviesRepository;
     }
 
-    public List<LandingDTO> getAllLandings() {
+    public List<LandingDto> getAllLandings() {
         List<Movies> movies = moviesRepository.findAll();
         return movies.stream()
-                .map(movie -> new LandingDTO(movie.getTitle(), movie.getPosterUrl(), movie.getReleaseDate()))
+                .map(movie -> new LandingDto(movie.getTitle(), movie.getPoster_url(), movie.getReleaseDate()))
                 .collect(Collectors.toList());
     }
 
-    public List<LandingDTO> getSortedAndDistinctByReleaseDate() {
+    public List<LandingDto> getSortedAndDistinctByReleaseDate() {
         LocalDate currentDate = LocalDate.now();
         List<Movies> movies = moviesRepository.findSortedAndDistinctByReleaseDate(currentDate);
         return movies.stream()
-                .map(movie -> new LandingDTO(movie.getTitle(), movie.getPosterUrl(), movie.getReleaseDate()))
+                .map(movie -> new LandingDto(movie.getTitle(), movie.getPoster_url(), movie.getReleaseDate()))
                 .collect(Collectors.toList());
     }
 }

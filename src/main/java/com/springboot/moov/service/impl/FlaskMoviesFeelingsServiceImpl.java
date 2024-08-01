@@ -5,7 +5,6 @@ import com.springboot.moov.data.repository.MoviesFeelingsRepository;
 import com.springboot.moov.data.dto.MovieDto;
 import com.springboot.moov.service.MoviesFeelingsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpEntity;
@@ -16,9 +15,8 @@ import org.springframework.http.ResponseEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-@Primary
 @Service
-public class MoviesFeelingsServiceImpl implements MoviesFeelingsService {
+public class FlaskMoviesFeelingsServiceImpl implements MoviesFeelingsService {
 
     @Autowired
     private MoviesFeelingsRepository moviesFeelingsRepository;
@@ -27,13 +25,14 @@ public class MoviesFeelingsServiceImpl implements MoviesFeelingsService {
 
     @Override
     public List<MovieDto> getDatabaseRecommendations(String genre) {
+        // 데이터베이스에서 장르에 따라 추천을 가져옵니다
         List<MoviesFeelings> movies = moviesFeelingsRepository.findByGenreOrderByRatingsDesc(genre);
 
-        List<MovieDto> movieDTOs = new ArrayList<>();
+        List<MovieDto> movieDtos = new ArrayList<>();
         for (MoviesFeelings movie : movies) {
-            movieDTOs.add(new MovieDto(movie.getTitle(), movie.getDescription()));
+            movieDtos.add(new MovieDto(movie.getTitle(), movie.getDescription()));
         }
-        return movieDTOs;
+        return movieDtos;
     }
 
     @Override
