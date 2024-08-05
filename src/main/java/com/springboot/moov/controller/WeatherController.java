@@ -22,8 +22,8 @@ public class WeatherController {
         return "rec_weather_3"; // templates 폴더의 HTML 파일 이름
     }
 
-    @GetMapping("/rec_weather_4")
-    public String recWeather4(Model model) {
-        return "rec_weather_4"; // templates 폴더의 HTML 파일 이름
+    @GetMapping("/rec_weather_3_1")
+    public String recWeather3_1(Model model) {
+        return "rec_weather_3_1"; // templates 폴더의 HTML 파일 이름
     }
 }

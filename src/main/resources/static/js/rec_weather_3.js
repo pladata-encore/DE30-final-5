@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         item.addEventListener('click', function() {
             const selectedWeather = this.getAttribute('data-weather');
-            window.location.href = `/rec_weather_4?weather=${selectedWeather}`;
+            window.location.href = `/rec_weather_3_1?weather=${selectedWeather}`;
         });
     });
 });
