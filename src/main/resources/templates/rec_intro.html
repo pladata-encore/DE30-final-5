@@ -1,94 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>moov</title>
-    <meta name="description" content="Figma htmlGenerator">
-    <meta name="author" content="htmlGenerator">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추천 영화</title>
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/rec_intro.css">
-
-    <style>
-        /*
-          Figma Background for illustrative/preview purposes only.
-          You can remove this style tag with no consequence
-        */
-        body {
-            background: #E5E5E5;
-        }
-
-        /* 초기에 숨겨진 검색 창 */
-        .search-box {
-            display: none;
-            position: absolute; /* 검색 창이 다른 요소 위에 나타나도록 */
-            top: 10%; /* 원하는 위치로 조정 */
-            left: 50%;
-            transform: translate(-50%, 0);
-            background: #ffffff;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-box input {
-            padding: 5px;
-        }
-
-        .search-box button {
-            padding: 5px;
-        }
-    </style>
 </head>
 <body>
-<div class="e119_1736">
-    <div class="e119_1737"></div>
-    <div class="e119_1738"></div>
-    <div class="e119_1739">
-        <div class="e119_1740"></div>
-        <div class="e119_1741"></div>
-        <div class="e119_1742"></div>
-        <div class="e119_1743"></div>
-        <div class="e119_1744">
-            <div class="e119_1745"></div>
-            <div class="e119_1746"></div>
-        </div>
+<div class="container">
+    <div class="logo-container">
+        <img src="/images/moov_logo.png" alt="Moov Logo" id="logo-image">
     </div>
-    <div class="e119_1747">
-        <div class="e119_1748"></div>
-        <div class="e119_1749">
-            <div class="e119_1750">
-                <div class="e119_1751"></div>
-                <div class="e119_1752"></div>
+    <header>
+        <h1 id="header-text">당신만의 영화 여정을 시작해볼까요?</h1>
+    </header>
+    <nav>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/home.png" alt="Home">
             </div>
         </div>
-        <span class="e119_1753">예) 찾는 추천이 없으시면 검색해보세요.</span>
-        <!-- 추가된 링크 -->
-        <a href="/rec_feel_1.html">Go to Feeling Recommendation 1</a>
-        <div class="e119_1776">장르별</div>
-        <div class="e119_1777 clickable" onclick="window.location.href='/rec_feel_1'">기분별</div>
-        <div class="e119_1778">날씨별</div>
-        <div class="e119_1779">영화 추천 받으실래요?</div>
-        <div class="e119_1781"></div>
-        <div class="e119_1782"></div>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/search.png" alt="Search">
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/mypage.png" alt="Profile">
+            </div>
+        </div>
+    </nav>
+    <section>
+        <a href="/rec_feel_1" class="option-link">
+            <div class="option">
+                <h2>기분별</h2>
+                <img src="/images/feel.png" alt="기분별 이미지" class="option-image">
+            </div>
+        </a>
+        <a href="/rec_genre_1" class="option-link">
+            <div class="option">
+                <h2>장르별</h2>
+                <img src="/images/genre.png" alt="장르별 이미지" class="option-image">
+            </div>
+        </a>
+        <a href="/rec_weather_1" class="option-link">
+            <div class="option">
+                <h2>날씨별</h2>
+                <img src="/images/weather.png" alt="날씨별 이미지" class="option-image">
+            </div>
+        </a>
+    </section>
+
+    <!-- 수정된 검색 박스 -->
+    <div class="search-container">
+        <div class="search-wrapper">
+            <form id="search-form" action="/movies" method="get">
+                <input type="text" name="query" placeholder="찾는 추천이 없으시면 검색해보세요." class="search-input">
+                <button type="submit" class="search-button">
+                    <img src="/images/search2.png" alt="Search">
+                </button>
+            </form>
+        </div>
     </div>
 
-<!-- 검색 버튼 -->
-<button id="toggle-search">검색</button>
-
-<!-- 검색 창 -->
-<div class="search-box">
-    <form id="search-form" action="/movies" method="get">
-        <input type="text" name="query" placeholder="영화 제목을 입력하세요">
-        <button type="submit">검색</button>
-    </form>
 </div>
-
-<script>
-    // 검색 버튼 클릭 시 검색 창을 펼치거나 숨기는 JavaScript 코드
-    document.getElementById('toggle-search').addEventListener('click', function() {
-        var searchBox = document.querySelector('.search-box');
-        searchBox.style.display = (searchBox.style.display === 'block') ? 'none' : 'block';
-    });
-</script>
-
+<script src="/js/rec_intro.js"></script>
 </body>
 </html>

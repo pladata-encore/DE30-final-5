@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Based Movie Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rec_weather_4.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo-container">
+        <img src="/images/moov_logo.png" alt="Moov Logo" id="logo-image">
+    </div>
+    <header>
+        <h1>날씨별</h1>
+        <img src="/images/weather.png" alt="날씨 이미지" id="header-image">
+    </header>
+    <div class="intro">
+        <p id="current-weather">현재 '<span class="weather-condition"></span>' 날씨에 알맞는 영화입니다.</p>
+    </div>
+    <div class="movie-gallery" id="movie-list">
+        <!-- 영화 목록은 JavaScript에서 동적으로 생성됩니다. -->
+    </div>
+</div>
+<script src="/js/rec_weather_4.js"></script>
+</body>
+</html>
