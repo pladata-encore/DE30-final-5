@@ -1,10 +1,110 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // URL에서 날씨 파라미터 추출
     const urlParams = new URLSearchParams(window.location.search);
     const weatherCondition = urlParams.get('weather');
+    const itemsPerPage = 5 * 6; // 5줄 * 6개/줄 = 30개
+    let currentPage = 1;
+    let movies = [];
+
+    function fetchMovies() {
+        const url = weatherCondition ? `/weathermovies?weather=${weatherCondition}` : `/weathermovies`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                movies = data;
+                displayMovies();
+                setupPagination();
+            })
+            .catch(error => console.error('Error fetching movie data:', error));
+    }
+
+    function displayMovies() {
+        const movieList = document.getElementById('movie-list');
+        movieList.innerHTML = '';
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = Math.min(start + itemsPerPage, movies.length);
+        const currentMovies = movies.slice(start, end);
+
+        currentMovies.forEach(movie => {
+            const movieItem = document.createElement('div');
+            movieItem.className = 'movie-item';
+            movieItem.innerHTML = `<img src="${movie.posterUrl}" alt="${movie.title}">`;
+            movieList.appendChild(movieItem);
+        });
+    }
+
+    function setupPagination() {
+        const totalPages = Math.ceil(movies.length / itemsPerPage);
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+
+        // Previous button
+        const prevButton = document.createElement('button');
+        prevButton.textContent = 'Previous';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayMovies();
+                setupPagination();
+            }
+        });
+        pagination.appendChild(prevButton);
+
+        // Page numbers
+        const pageRange = 5; // Number of page buttons to show at once
+        const startPage = Math.max(1, currentPage - Math.floor(pageRange / 2));
+        const endPage = Math.min(totalPages, startPage + pageRange - 1);
+
+        for (let i = startPage; i <= endPage; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.disabled = i === currentPage;
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                displayMovies();
+                setupPagination();
+            });
+            pagination.appendChild(pageButton);
+        }
+
+        // Next button
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Next';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayMovies();
+                setupPagination();
+            }
+        });
+        pagination.appendChild(nextButton);
+
+        // Page info
+        const pageInfo = document.createElement('span');
+        pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        pagination.appendChild(pageInfo);
+    }
+
+    function getWeatherIconCode(condition) {
+        const iconMapping = {
+            thunderstorm: '11d',
+            drizzle: '09d',
+            rain: '10d',
+            snow: '13d',
+            clear: '01d',
+            clouds: '03d',
+            fog: '50d',
+            dust: '50n',
+            typhoon: '11n',
+            windy: '50n',
+        };
+        return iconMapping[condition] || '01d';
+    }
 
     if (weatherCondition) {
-        // 날씨 상태를 문장에 삽입
         const iconCode = getWeatherIconCode(weatherCondition);
         const weatherIconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
 
@@ -12,27 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
             ${weatherCondition}
             <img src="${weatherIconUrl}" alt="Weather Icon" class="weather-icon">
         `;
-
-        // 해당 날씨에 맞는 영화 추천 목록을 가져옴
-        fetch(`/weathermovies?weather=${weatherCondition}`)
-            .then(response => response.json())
-            .then(movies => {
-                const movieList = document.getElementById('movie-list');
-                movieList.innerHTML = ''; // 기존 목록 초기화
-                if (movies.length > 0) {
-                    movies.forEach(movie => {
-                        const movieItem = document.createElement('div');
-                        movieItem.className = 'movie-item';
-                        movieItem.innerHTML = `<img src="${movie.posterUrl}" alt="${movie.title}">`;
-                        movieList.appendChild(movieItem);
-                    });
-                } else {
-                    movieList.innerHTML = '<p>No movies found for the current weather.</p>';
-                }
-            })
-            .catch(error => console.error('Error fetching movie data:', error));
+        fetchMovies();
     } else if (navigator.geolocation) {
-        // 위치 기반으로 날씨를 가져오는 경우
         navigator.geolocation.getCurrentPosition(function(position) {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
@@ -64,40 +145,6 @@ document.addEventListener("DOMContentLoaded", function() {
             <img src="${weatherIconUrl}" alt="Weather Icon" class="weather-icon">
         `;
 
-        // 해당 날씨에 맞는 영화 추천 목록을 가져옴
-        fetch(`/weathermovies?weather=${weatherCondition}`)
-            .then(response => response.json())
-            .then(movies => {
-                const movieList = document.getElementById('movie-list');
-                movieList.innerHTML = ''; // 기존 목록 초기화
-                if (movies.length > 0) {
-                    movies.forEach(movie => {
-                        const movieItem = document.createElement('div');
-                        movieItem.className = 'movie-item';
-                        movieItem.innerHTML = `<img src="${movie.posterUrl}" alt="${movie.title}">`;
-                        movieList.appendChild(movieItem);
-                    });
-                } else {
-                    movieList.innerHTML = '<p>No movies found for the current weather.</p>';
-                }
-            })
-            .catch(error => console.error('Error fetching movie data:', error));
-    }
-
-    function getWeatherIconCode(condition) {
-        // 날씨 상태에 맞는 아이콘 코드 반환
-        const iconMapping = {
-            thunderstorm: '11d', // Thunderstorm (낮)
-            drizzle: '09d', // Drizzle (낮)
-            rain: '10d', // Rain (낮)
-            snow: '13d', // Snow (낮)
-            clear: '01d', // Clear (낮)
-            clouds: '03d', // Clouds (낮)
-            windy: '50n', // Windy (대부분의 API에서 제공하지 않지만, 대체로 '50d' 사용 가능)
-            fog: '50d',             // 안개 (낮)
-            dust: '50n', // Dust (오염과 유사하게 처리)
-            typhoon: '11n', // Typhoon (대부분의 API에서는 '11d'로 처리)
-        };
-        return iconMapping[condition] || '01d'; // 기본 아이콘으로 '01d' 반환
+        fetchMovies();
     }
 });

@@ -13,7 +13,7 @@ public class MovieRowMapper implements RowMapper<Movies> {
         Movies movies = new Movies();
         movies.setId(rs.getLong("id"));
         movies.setTitle(rs.getString("title"));
-        movies.setOriginal_language((rs.getString("originalLanguage")));
+        movies.setOriginallanguage((rs.getString("originalLanguage")));
         movies.setGenre(rs.getString("genre"));
         movies.setRuntime(rs.getInt("runtime"));
         movies.setRating(rs.getFloat("rating"));
@@ -21,15 +21,15 @@ public class MovieRowMapper implements RowMapper<Movies> {
         // Null 체크 후 LocalDate 변환
         java.sql.Date sqlDate = rs.getDate("releaseDate");
         if (sqlDate != null) {
-            movies.setReleaseDate(sqlDate.toLocalDate());
+            movies.setReleasedate(sqlDate.toLocalDate());
         } else {
-            movies.setReleaseDate(null); // 또는 적절한 기본값 설정
+            movies.setReleasedate(null); // 또는 적절한 기본값 설정
         }
 
-        movies.setPoster_url((rs.getString("posterUrl")));
-        movies.setPlot(rs.getString("synopsis"));
-        movies.setTrailer_url(rs.getString("trailer"));
-        movies.setActors(rs.getString("cast"));
+        movies.setPosterurl((rs.getString("posterUrl")));
+        movies.setSynopsis(rs.getString("synopsis"));
+        movies.setTrailer(rs.getString("trailer"));
+        movies.setCast(rs.getString("cast"));
         movies.setDirector(rs.getString("director"));
         movies.setSeries(rs.getString("series"));
 

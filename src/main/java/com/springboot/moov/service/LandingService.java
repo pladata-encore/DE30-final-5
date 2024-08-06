@@ -22,7 +22,7 @@ public class LandingService {
     public List<LandingDto> getAllLandings() {
         List<Movies> movies = moviesRepository.findAll();
         return movies.stream()
-                .map(movie -> new LandingDto(movie.getTitle(), movie.getPoster_url(), movie.getReleaseDate()))
+                .map(movie -> new LandingDto(movie.getTitle(), movie.getPosterurl(), movie.getReleasedate()))
                 .collect(Collectors.toList());
     }
 
@@ -30,7 +30,7 @@ public class LandingService {
         LocalDate currentDate = LocalDate.now();
         List<Movies> movies = moviesRepository.findSortedAndDistinctByReleaseDate(currentDate);
         return movies.stream()
-                .map(movie -> new LandingDto(movie.getTitle(), movie.getPoster_url(), movie.getReleaseDate()))
+                .map(movie -> new LandingDto(movie.getTitle(), movie.getPosterurl(), movie.getReleasedate()))
                 .collect(Collectors.toList());
     }
 }
