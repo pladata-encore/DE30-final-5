@@ -81,6 +81,7 @@ header h1 {
     padding: 0; /* 내부 여백 제거 */
 }
 
+/* 영화 갤러리 스타일링 */
 .movie-gallery {
     position: absolute;
     top: 360px; /* 상단 여백 조정 */
@@ -94,16 +95,69 @@ header h1 {
     justify-content: center; /* 가로 방향 중앙 정렬 */
 }
 
-.movie-gallery img {
+/* 영화 아이템 스타일링 */
+.movie-item {
+    text-align: center; /* 제목 중앙 정렬 */
+}
+
+.movie-item img {
     width: 100%;
     height: auto;
     max-width: 200px; /* 포스터 최대 크기 */
     border-radius: 10px; /* 둥근 모서리 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 애니메이션 */
 }
 
-.movie-gallery img:hover {
+.movie-item img:hover {
     transform: scale(1.05); /* 마우스 오버 시 포스터 확대 효과 */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 마우스 오버 시 그림자 효과 */
+}
+
+.movie-item p {
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    text-transform: capitalize; /* 첫 글자 대문자 */
+}
+
+.movie-item a {
+    text-decoration: none; /* 링크 기본 스타일 제거 */
+    color: inherit; /* 부모 요소의 색상 상속 */
+}
+
+.movie-item a:hover p {
+    color: #007BFF; /* 링크 호버 시 텍스트 색상 변경 */
+}
+
+/* 페이지 네비게이션 스타일링 */
+.pagination {
+    position: absolute;
+    bottom: -1450px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: #D8BFD8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 18px;
+    margin: 0 10px;
 }
 
 /* 페이지가 스크롤 가능하도록 설정 */
