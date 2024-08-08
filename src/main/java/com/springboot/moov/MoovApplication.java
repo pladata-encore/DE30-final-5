@@ -2,13 +2,12 @@ package com.springboot.moov;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"com.springboot.moov.data.entity"})
+@EnableJpaRepositories(basePackages = "com.springboot.moov.data.repository")
 public class MoovApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MoovApplication.class, args);
 	}
 }
-
