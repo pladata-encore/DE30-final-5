@@ -33,7 +33,6 @@ header {
 
 #movie-title-header {
     font-size: 2.5em;
-    color: #ffffff;
     margin: 0; /* 제목과 다른 콘텐츠 사이의 간격 제거 */
     padding: 0; /* 제목의 패딩 제거 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
@@ -85,7 +84,6 @@ header {
     align-items: flex-start; /* 포스터와 내용 정렬 */
     padding: 20px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.8); /* 흰색 배경 추가로 가독성 향상 */
     width: 100%;
     max-width: 960px; /* 최대 너비 설정 */
     opacity: 0; /* 초기 상태에서 숨기기 */

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 1;
     let movies = [];
 
+    // 영화 데이터 가져오기
     function fetchMovies() {
         const url = weatherCondition ? `/weathermovies?weather=${weatherCondition}` : `/weathermovies`;
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error fetching movie data:', error));
     }
 
+    // 영화 목록 표시
     function displayMovies() {
         const movieList = document.getElementById('movie-list');
         movieList.innerHTML = '';
@@ -29,17 +31,23 @@ document.addEventListener("DOMContentLoaded", function() {
         currentMovies.forEach(movie => {
             const movieItem = document.createElement('div');
             movieItem.className = 'movie-item';
-            movieItem.innerHTML = `<img src="${movie.posterUrl}" alt="${movie.title}">`;
+            movieItem.innerHTML = `
+                <a href="/movie_detail.html?id=${movie.id}">
+                    <img src="${movie.posterUrl}" alt="${movie.title}">
+                    <p>${movie.title}</p>
+                </a>
+            `;
             movieList.appendChild(movieItem);
         });
     }
 
+    // 페이지 네비게이션 설정
     function setupPagination() {
         const totalPages = Math.ceil(movies.length / itemsPerPage);
         const pagination = document.getElementById('pagination');
         pagination.innerHTML = '';
 
-        // Previous button
+        // 이전 버튼
         const prevButton = document.createElement('button');
         prevButton.textContent = 'Previous';
         prevButton.disabled = currentPage === 1;
@@ -52,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         pagination.appendChild(prevButton);
 
-        // Page numbers
-        const pageRange = 5; // Number of page buttons to show at once
+        // 페이지 번호 버튼
+        const pageRange = 5; // 페이지 버튼 개수
         const startPage = Math.max(1, currentPage - Math.floor(pageRange / 2));
         const endPage = Math.min(totalPages, startPage + pageRange - 1);
 
@@ -69,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
             pagination.appendChild(pageButton);
         }
 
-        // Next button
+        // 다음 버튼
         const nextButton = document.createElement('button');
         nextButton.textContent = 'Next';
         nextButton.disabled = currentPage === totalPages;
@@ -82,12 +90,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         pagination.appendChild(nextButton);
 
-        // Page info
+        // 페이지 정보 표시
         const pageInfo = document.createElement('span');
         pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
         pagination.appendChild(pageInfo);
     }
 
+    // 날씨 아이콘 코드 가져오기
     function getWeatherIconCode(condition) {
         const iconMapping = {
             thunderstorm: '11d',
@@ -104,16 +113,24 @@ document.addEventListener("DOMContentLoaded", function() {
         return iconMapping[condition] || '01d';
     }
 
-    if (weatherCondition) {
-        const iconCode = getWeatherIconCode(weatherCondition);
+    // 날씨 정보 업데이트 및 영화 데이터 가져오기
+    function updateWeatherAndMovies(weatherCondition, iconCode) {
         const weatherIconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
 
         document.querySelector('.weather-condition').innerHTML = `
             ${weatherCondition}
             <img src="${weatherIconUrl}" alt="Weather Icon" class="weather-icon">
         `;
+
         fetchMovies();
+    }
+
+    // 날씨 조건이 URL에 있을 때 처리
+    if (weatherCondition) {
+        const iconCode = getWeatherIconCode(weatherCondition);
+        updateWeatherAndMovies(weatherCondition, iconCode);
     } else if (navigator.geolocation) {
+        // 위치 기반 날씨 정보 가져오기
         navigator.geolocation.getCurrentPosition(function(position) {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
@@ -135,16 +152,5 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     } else {
         console.error('Geolocation is not supported by this browser.');
-    }
-
-    function updateWeatherAndMovies(weatherCondition, iconCode) {
-        const weatherIconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
-
-        document.querySelector('.weather-condition').innerHTML = `
-            ${weatherCondition}
-            <img src="${weatherIconUrl}" alt="Weather Icon" class="weather-icon">
-        `;
-
-        fetchMovies();
     }
 });

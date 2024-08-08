@@ -45,7 +45,7 @@ header {
 /* 제목 스타일링 */
 header h1 {
     font-size: 57px;
-    color: rgba(30, 30, 30, 1);
+    color: #000000; /* 검은색으로 변경 */
     letter-spacing: -2.2px;
     margin: 0;
 }
@@ -84,6 +84,24 @@ header h1 {
     margin-left: 10px;
 }
 
+/* 영화 목록 아이템 스타일링 */
+.movie-item {
+    text-align: center; /* 제목 중앙 정렬 */
+}
+
+/* 영화 제목 링크 스타일링 */
+.movie-item a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #000000; /* 검은색으로 변경 */
+}
+
+/* 영화 제목 스타일링 */
+.movie-item p {
+    color: #000000; /* 검은색으로 변경 */
+    margin: 10px 0 0; /* 제목 위쪽 여백 추가 */
+    font-size: 18px; /* 제목 폰트 사이즈 조정 */
+}
+
 /* 영화 목록 스타일링 */
 .movie-gallery {
     position: absolute;
@@ -115,7 +133,7 @@ header h1 {
 /* 페이지네이션 스타일링 */
 .pagination {
     position: absolute;
-    bottom: 20px;
+    bottom: -250px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -124,7 +142,7 @@ header h1 {
 }
 
 .pagination button {
-    background-color: #007bff;
+    background-color: #D8BFD8;
     color: white;
     border: none;
     border-radius: 5px;
