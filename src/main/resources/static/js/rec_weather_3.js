@@ -71,4 +71,15 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = `/rec_weather_3_1?weather=${selectedWeather}`;
         });
     });
+    // nav-item 클릭 이벤트 처리
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            if (index === 0) {
+                window.location.href = '/rec_intro'; // 홈 버튼 클릭 시 /rec_intro로 이동
+            } else if (index === 1) {
+                window.location.href = '/search'; // 두 번째 nav-item 클릭 시 이동할 페이지
+            }
+        });
+    });
 });

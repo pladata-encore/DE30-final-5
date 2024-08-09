@@ -72,6 +72,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer; /* 클릭 가능 커서 */
 }
 
 .nav-circle {

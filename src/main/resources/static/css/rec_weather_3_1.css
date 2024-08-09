@@ -53,6 +53,38 @@ header h1 {
     height: 70px;
     margin-left: 20px;
 }
+nav {
+    position: absolute;
+    top: 33px;
+    right: 170px;
+    display: flex;
+    align-items: center;
+    z-index: 10; /* 다른 요소 위로 올리기 위해 z-index 추가 */
+}
+
+.nav-item {
+    width: 82.62px;
+    height: 84.22px;
+    margin: 0 20px;
+    background: linear-gradient(0deg, rgba(198, 105, 78, 1) 0%, rgba(252, 207, 188, 0.78) 50.6%, rgba(246, 247, 233, 1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* 클릭 가능 커서 */
+}
+
+.nav-circle {
+    width: 67.69px;
+    height: 68.99px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav img {
+    width: 100%;
+    height: auto;
+}
 
 /* 소개 부분 스타일링 */
 .intro {
