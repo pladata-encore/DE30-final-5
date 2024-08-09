@@ -51,7 +51,7 @@ public class GenreService {
                         movie.getTitle(),
                         movie.getGenre(),
                         movie.getPosterurl(),
-                        (double) movie.getRating(), // float을 Double로 변환
+                        movie.getRating(), // float 타입으로 직접 사용
                         movie.getReleasedate()))
                 .collect(Collectors.toList());
     }
