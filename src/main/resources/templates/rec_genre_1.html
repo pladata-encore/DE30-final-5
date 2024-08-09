@@ -1,26 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-          <head>
-            <meta charset="utf-8">
-          
-            <title>moov</title>
-            <meta name="description" content="Figma htmlGenerator">
-            <meta name="author" content="htmlGenerator">
-            <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>장르 선택</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rec_genre_1.css">
+</head>
+<body>
+<div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="/images/moov_logo.png" alt="Moov Logo" id="logo-image">
+            </div>
+            <h1 class="title">장르별</h1>
+            <img src="/images/genre.png" alt="장르 이미지" id="header-image">
+        </header>
+    <nav>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/home.png" alt="Home">
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-circle">
+                <img src="/images/search.png" alt="Search">
+            </div>
+        </div>
+    </nav>
 
-            <link rel="stylesheet" href="css/rec_genre_1.css">
-            
-            <style>
-              /*
-                Figma Background for illustrative/preview purposes only.
-                You can remove this style tag with no consequence
-              */
-              body {background: #E5E5E5; }
-            </style>
-          
-          </head>
-          
-          <body>
-            <div class=e119_1975><div  class="e736_688"></div><div  class="e119_1976"></div><div class=e119_1995><div  class="e119_1996"></div><div  class="e119_1997"></div><div  class="e119_1998"></div><div  class="e119_1999"></div><div class=e119_2000><div  class="e119_2001"></div><div  class="e119_2002"></div></div></div><span  class="e119_2025">장르별</span><div  class="e119_2027"></div><div  class="e577_629"></div><div  class="e662_643"></div><div  class="e662_644"></div><div  class="e662_645"></div><div  class="e662_646"></div><div  class="e662_647"></div><div  class="e662_648"></div><div  class="e716_673"></div><div  class="e716_674"></div><div  class="e716_675"></div><div  class="e716_676"></div><div  class="e716_677"></div><div  class="e716_679"></div><div  class="e716_680"></div><div  class="e716_681"></div><div  class="e716_682"></div><div  class="e716_684"></div><div  class="e716_685"></div><div  class="e736_687"></div></div>
-          </body>
-          </html>
+    <main>
+        <p class="intro-text">장르를 선택해 주세요.</p>
+        <section class="genre-selection">
+                <div class="genre-item genre-icon-sf" data-genre="sf">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Science Fiction</span>
+                    <span class="genre-translation">(SF)</span>
+                </div>
+                <div class="genre-item genre-icon-crime" data-genre="crime">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Crime</span>
+                    <span class="genre-translation">(범죄)</span>
+                </div>
+                <div class="genre-item genre-icon-horror" data-genre="horror">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Horror</span>
+                    <span class="genre-translation">(공포)</span>
+                </div>
+                <div class="genre-item genre-icon-romance" data-genre="romance">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Romance</span>
+                    <span class="genre-translation">(로맨스)</span>
+                </div>
+                <div class="genre-item genre-icon-comedy" data-genre="comedy">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Comedy</span>
+                    <span class="genre-translation">(코미디)</span>
+                </div>
+                <div class="genre-item genre-icon-documentary" data-genre="documentary">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Documentary</span>
+                    <span class="genre-translation">(다큐멘터리)</span>
+                </div>
+                <div class="genre-item genre-icon-animation" data-genre="animation">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Animation</span>
+                    <span class="genre-translation">(애니메이션)</span>
+                </div>
+                <div class="genre-item genre-icon-action" data-genre="action">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Action</span>
+                    <span class="genre-translation">(액션)</span>
+                </div>
+                <div class="genre-item genre-icon-mystery" data-genre="mystery">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Mystery</span>
+                    <span class="genre-translation">(미스터리)</span>
+                </div>
+                <div class="genre-item genre-icon-music" data-genre="music">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Music</span>
+                    <span class="genre-translation">(음악)</span>
+                </div>
+                <div class="genre-item genre-icon-fantasy" data-genre="fantasy">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Fantasy</span>
+                    <span class="genre-translation">(판타지)</span>
+                </div>
+                <div class="genre-item genre-icon-western" data-genre="western">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Western</span>
+                    <span class="genre-translation">(서부극)</span>
+                </div>
+                <div class="genre-item genre-icon-adventure" data-genre="adventure">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Adventure</span>
+                    <span class="genre-translation">(모험)</span>
+                </div>
+                <div class="genre-item genre-icon-drama" data-genre="drama">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Drama</span>
+                    <span class="genre-translation">(드라마)</span>
+                </div>
+                <div class="genre-item genre-icon-thriller" data-genre="thriller">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Thriller</span>
+                    <span class="genre-translation">(스릴러)</span>
+                </div>
+                <div class="genre-item genre-icon-family" data-genre="family">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">Family</span>
+                    <span class="genre-translation">(가족)</span>
+                </div>
+                <div class="genre-item genre-icon-war" data-genre="war">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">War</span>
+                    <span class="genre-translation">(전쟁)</span>
+                </div>
+                <div class="genre-item genre-icon-history" data-genre="history">
+                    <div class="genre-icon"></div>
+                    <span class="genre-title">History</span>
+                    <span class="genre-translation">(역사)</span>
+                </div>
+        </section>
+    </main>
+</div>
+<script src="/js/rec_genre_1.js"></script>
+</body>
+</html>

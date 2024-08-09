@@ -1,313 +1,252 @@
-:root {
-    --inter-font: "Inter";
+/* 기본 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* 전역 스타일 */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #E5E5E5;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* 중앙 정렬 */
 }
 
-.119_1975 {
-	overflow:hidden;
+/* 컨테이너 스타일 */
+.container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url('/images/background_image.png'); /* 배경 이미지 경로 */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.e119_1975 { 
-	width:1440px;
-	height:1024px;
-	position:absolute;
+
+/* 내비게이션 바 스타일 */
+nav {
+    position: absolute;
+    top: 33px;
+    right: 170px;
+    display: flex;
+    align-items: center;
+    z-index: 10; /* 다른 요소 위로 올리기 위해 z-index 추가 */
 }
-.e736_688 { 
-	width:4096px;
-	height:2913px;
-	position:absolute;
-	left:-1414px;
-	top:-930px;
-	background-image:url(images/background_image_1.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.nav-item {
+    width: 82.62px;
+    height: 84.22px;
+    margin: 0 20px;
+    background: linear-gradient(0deg, rgba(198, 105, 78, 1) 0%, rgba(252, 207, 188, 0.78) 50.6%, rgba(246, 247, 233, 1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* 클릭 가능 커서 */
 }
-.e119_1976 { 
-	background-image:linear-gradient(0deg, rgba(182.31170922517776, 182.31170922517776, 182.31170922517776, 0.5) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.30000001192092896) 55.3999662399292%,rgba(255, 248.99717330932617, 148.7499949336052, 0.75) 100%) ;
-	width:1440px;
-	height:426px;
-	position:absolute;
-	left:0px;
-	top:290px;
+
+.nav-circle {
+    width: 67.69px;
+    height: 68.99px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.e119_1995 { 
-	width:372px;
-	height:84.21826171875px;
-	position:absolute;
-	left:1040px;
-	top:33px;
+
+nav img {
+    width: 100%;
+    height: auto;
 }
-.e119_1996 { 
-	border-radius:500px;
-	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
-	width:82.6221694946289px;
-	height:84.21826171875px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+/* 로고 이미지 컨테이너 */
+.logo-container {
+    position: absolute;
+    top: -200px; /* 내비게이션 바와 동일한 높이로 조정 */
+    z-index: 1; /* 헤더 위에 로고를 배치 */
 }
-.e119_1997 { 
-	width:67.69071960449219px;
-	height:68.99836730957031px;
-	position:absolute;
-	left:7.160584926605225px;
-	top:6.737490653991699px;
-	background-image:url(images/rec_genre_1/home.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 로고 이미지 스타일링 */
+#logo-image {
+    width: 170px; /* 로고 이미지 크기 조정 */
+    height: auto;
 }
-.e119_1998 { 
-	border-radius:500px;
-	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
-	width:82.6221694946289px;
-	height:84.21826171875px;
-	position:absolute;
-	left:140.458251953125px;
-	top:0px;
+
+/* 헤더 스타일 */
+header {
+    position: absolute;
+    top: 200px; /* 상단 여백 조정 */
+    display: flex;
+    align-items: center;
+    z-index: 0; /* 로고 아래로 배치 */
 }
-.e119_1999 { 
-	width:42.30670166015625px;
-	height:43.12398147583008px;
-	position:absolute;
-	left:162.45773315429688px;
-	top:22.424470901489258px;
-	background-image:url(images/rec_genre_1/search.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 제목 스타일링 */
+.title {
+    font-size: 57px;
+    color: rgba(30, 30, 30, 1);
+    letter-spacing: -2.2px;
+    margin: 0;
+    margin-left: 20px;
 }
-.e119_2000 { 
-	width:82.6221694946289px;
-	height:84.21826171875px;
-	position:absolute;
-	left:289.3778381347656px;
-	top:0px;
+
+/* 장르 이미지 스타일링 */
+#header-image {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
 }
-.e119_2001 { 
-	border-radius:500px;
-	background-image:linear-gradient(0deg, rgba(198.68747770786285, 105.10782435536385, 78.81268814206123, 1) 0%,rgba(252.51459896564484, 207.9942575097084, 188.50238263607025, 0.7833999991416931) 50.60000419616699%,rgba(246.0000005364418, 247.00000047683716, 233.00000131130219, 1) 100%) ;
-	width:82.6221694946289px;
-	height:84.21826171875px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+/* 인트로 텍스트 스타일링 */
+.intro-text {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+    position: absolute;
+    top: 260px; /* 헤더 아래 위치 조정 */
+    left: 25px; /* 왼쪽 정렬 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    width: calc(100% - 50px); /* 좌우 여백을 고려한 너비 설정 */
 }
-.e119_2002 { 
-	width:47.38350296020508px;
-	height:48.298858642578125px;
-	position:absolute;
-	left:17.768840789794922px;
-	top:17.249591827392578px;
-	background-image:url(images/rec_genre_1/mypage.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 장르 아이템 스타일 */
+.genre-selection {
+    position: absolute;
+    top: 350px; /* 인트로 텍스트 아래 위치 조정 */
+    left: 0;
+    right: 0;
+    height: auto; /* 높이를 자동으로 조정 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* 장르 아이템 크기를 최소 170px로 조정 */
+    grid-gap: 20px; /* 장르 아이템 간격 조정 */
+    align-items: start; /* 상단 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    padding: 0 20px; /* 좌우 패딩 추가 */
 }
-.e119_2025 { 
-	color:rgba(30.00000011175871, 30.00000011175871, 30.00000011175871, 1);
-	width:155px;
-	height:86px;
-	position:absolute;
-	left:25px;
-	top:207px;
-	font-family:Inter;
-	text-align:left;
-	font-size:57px;
-	letter-spacing:-2.200000047683716;
+
+/* 장르 아이템 스타일 */
+.genre-item {
+    width: 170px; /* 아이템 너비 조정 */
+    height: 230px; /* 아이템 높이 조정 (텍스트와 아이콘을 위한 공간) */
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 10px; /* 경계선 둥글게 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 효과 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* 텍스트를 아래로 배치 */
+    text-align: center;
+    padding-bottom: 15px; /* 텍스트와 아이콘 사이의 간격 확보 */
 }
-.e119_2027 { 
-	width:70px;
-	height:70px;
-	position:absolute;
-	left:180px;
-	top:215px;
-	background-image:url(images/rec_genre_1/genre.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+.genre-item:hover {
+    background-color: #D8BFD8; /* 배경색 변화 */
+    color: #fff; /* 글자 색상 변경 */
+    transform: scale(1.05); /* 버튼 확대 */
+    transition: transform 0.5s ease, background-color 0.5s ease; /* 부드러운 전환 효과 */
+    border-radius: 10px; /* 경계선 둥글게 */
 }
-.e577_629 { 
-	width:150px;
-	height:190px;
-	position:absolute;
-	left:5px;
-	top:-4.547473508864641e-13px;
-	background-image:url(images/rec_genre_1/genre.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 제목 스타일링 */
+.genre-title {
+    font-size: 16px; /* 제목 크기 조정 */
+    color: #333;
+    margin-bottom: 5px; /* 제목과 번역 텍스트 사이의 간격 */
 }
-.e662_643 { 
-	width:88px;
-	height:87px;
-	position:absolute;
-	left:80px;
-	top:402px;
-	background-image:url(images/rec_genre_1/sf.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 한글 번역 텍스트 스타일링 */
+.genre-translation {
+    font-size: 14px; /* 번역 텍스트 크기 조정 */
+    color: #555;
 }
-.e662_644 { 
-	width:100px;
-	height:100px;
-	position:absolute;
-	left:35px;
-	top:700px;
-	background-image:url(images/rec_genre_1/crime.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 장르별 아이템 이미지 */
+.genre-icon {
+    width: 90px; /* 아이콘 크기 조정 */
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px; /* 경계선 둥글게 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 효과 */
 }
-.e662_645 { 
-	width:140px;
-	height:140px;
-	position:absolute;
-	left:442px;
-	top:446px;
-	background-image:url(images/rec_genre_1/scary.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+/* 장르별 아이템 이미지 */
+.genre-icon-sf .genre-icon {
+    background-image: url('/images/rec_genre_1/science_fiction.png');
 }
-.e662_646 { 
-	width:96px;
-	height:96px;
-	position:absolute;
-	left:391px;
-	top:271px;
-	background-image:url(images/rec_genre_1/romance.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-crime .genre-icon {
+    background-image: url('/images/rec_genre_1/crime.png');
 }
-.e662_647 { 
-	width:87px;
-	height:87px;
-	position:absolute;
-	left:1284px;
-	top:291px;
-	background-image:url(images/rec_genre_1/comedy.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-horror .genre-icon {
+    background-image: url('/images/rec_genre_1/horror.png');
 }
-.e662_648 { 
-	width:219px;
-	height:219px;
-	position:absolute;
-	left:646px;
-	top:623px;
-	background-image:url(images/rec_genre_1/documentary.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-romance .genre-icon {
+    background-image: url('/images/rec_genre_1/romance.png');
 }
-.e716_673 { 
-	width:64px;
-	height:64px;
-	position:absolute;
-	left:962px;
-	top:221px;
-	background-image:url(images/rec_genre_1/animation.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-comedy .genre-icon {
+    background-image: url('/images/rec_genre_1/comedy.png');
 }
-.e716_674 { 
-	width:96px;
-	height:96px;
-	position:absolute;
-	left:845px;
-	top:446px;
-	background-image:url(images/rec_genre_1/action.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-documentary .genre-icon {
+    background-image: url('/images/rec_genre_1/documentary.png');
 }
-.e716_675 { 
-	width:60px;
-	height:60px;
-	position:absolute;
-	left:1328px;
-	top:581px;
-	background-image:url(images/rec_genre_1/mistery.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-animation .genre-icon {
+    background-image: url('/images/rec_genre_1/animation.png');
 }
-.e716_676 { 
-	width:96px;
-	height:96px;
-	position:absolute;
-	left:1067px;
-	top:626px;
-	background-image:url(images/rec_genre_1/music.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-action .genre-icon {
+    background-image: url('/images/rec_genre_1/action.png');
 }
-.e716_677 { 
-	width:100px;
-	height:100px;
-	position:absolute;
-	left:1247px;
-	top:804px;
-	background-image:url(images/rec_genre_1/fantasy.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-mystery .genre-icon {
+    background-image: url('/images/rec_genre_1/mystery.png');
 }
-.e716_679 { 
-	width:85px;
-	height:85px;
-	position:absolute;
-	left:512px;
-	top:854px;
-	background-image:url(images/rec_genre_1/cowboy.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-music .genre-icon {
+    background-image: url('/images/rec_genre_1/music.png');
 }
-.e716_680 { 
-	width:64px;
-	height:64px;
-	position:absolute;
-	left:221px;
-	top:800px;
-	background-image:url(images/rec_genre_1/adventure.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-fantasy .genre-icon {
+    background-image: url('/images/rec_genre_1/fantasy.png');
 }
-.e716_681 { 
-	width:64px;
-	height:64px;
-	position:absolute;
-	left:375px;
-	top:697px;
-	background-image:url(images/rec_genre_1/drama.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-western .genre-icon {
+    background-image: url('/images/rec_genre_1/western.png');
 }
-.e716_682 { 
-	width:100px;
-	height:100px;
-	position:absolute;
-	left:666px;
-	top:272px;
-	background-image:url(images/rec_genre_1/handcuffs.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-adventure .genre-icon {
+    background-image: url('/images/rec_genre_1/adventure.png');
 }
-.e716_684 { 
-	width:80px;
-	height:80px;
-	position:absolute;
-	left:239px;
-	top:527px;
-	background-image:url(images/rec_genre_1/family.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-drama .genre-icon {
+    background-image: url('/images/rec_genre_1/drama.png');
 }
-.e716_685 { 
-	width:96px;
-	height:96px;
-	position:absolute;
-	left:1067px;
-	top:453px;
-	background-image:url(images/rec_genre_1/war.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-thriller .genre-icon {
+    background-image: url('/images/rec_genre_1/thriller.png');
 }
-.e736_687 { 
-	width:171px;
-	height:85px;
-	position:absolute;
-	left:876px;
-	top:797px;
-	background-image:url(images/rec_genre_1/history.png);
-	background-repeat:no-repeat;
-	background-size:cover;
+
+.genre-icon-family .genre-icon {
+    background-image: url('/images/rec_genre_1/family.png');
+}
+
+.genre-icon-war .genre-icon {
+    background-image: url('/images/rec_genre_1/war.png');
+}
+
+.genre-icon-history .genre-icon {
+    background-image: url('/images/rec_genre_1/history.png');
+}
+
+/* 페이지가 스크롤 가능하도록 설정 */
+html, body {
+    height: 100%;
+}
+
+.container {
+    overflow-y: auto; /* 수직 스크롤 활성화 */
+    max-height: 100vh; /* 최대 높이를 뷰포트 높이로 설정 */
 }
