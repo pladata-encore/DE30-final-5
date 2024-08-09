@@ -1,57 +1,42 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>추천 영화</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Genre Based Movie Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rec_genre_2.css">
 </head>
 <body>
-<div class="e198_570">
-    <div class="e738_691"></div>
-    <div class="e198_571"></div>
-    <div class="e198_572"></div>
-    <div class="e198_573">
-        <div class="e198_574"></div>
-    </div>
-    <div class="e198_575"></div>
-    <div class="e198_576"></div>
-    <div class="e198_577"></div>
-    <div class="e198_579">
-        <div class="e198_580"></div>
-        <div class="e198_581"></div>
-        <div class="e198_582"></div>
-        <div class="e198_583"></div>
-        <div class="e198_584">
-            <div class="e198_585"></div>
-            <div class="e198_586"></div>
+<nav>
+    <div class="nav-item">
+        <div class="nav-circle">
+            <img src="/images/home.png" alt="Home">
         </div>
     </div>
-    <span class="e198_587">장르별</span>
-    <div class="e198_588"></div>
-    <span class="e198_589">코미디 장르에서 추천드리는 영화입니다</span>
-    <div class="e198_590"></div>
-    <div class="e198_591"></div>
-    <div class="e738_689"></div>
-    <div class="e198_592">
-        <div class="e198_593"></div>
-        <div class="e198_594">
-            <span class="ei198_594_488_56170">Label</span>
-            <span class="ei198_594_488_56171">􀆏</span>
+    <div class="nav-item">
+        <div class="nav-circle">
+            <img src="/images/search.png" alt="Search">
         </div>
     </div>
-    <div class="e198_607"></div>
-    <div class="e198_608"></div>
-    <div class="e198_609"></div>
-    <span class="e198_610">최신순</span>
-    <span class="e198_611">인기순</span>
-    <div class="e577_631"></div>
-
-    <!-- 영화 포스터를 담을 컨테이너 -->
-    <div id="movie-posters" class="movie-posters"></div>
+</nav>
+<div class="container">
+    <div class="logo-container">
+        <img src="/images/moov_logo.png" alt="Moov Logo" id="logo-image">
+    </div>
+    <header>
+        <h1>장르별</h1>
+    </header>
+    <div class="intro">
+        <p id="current-genre">현재 '<span class="selected-genre"></span>' 장르의 영화 목록입니다.</p>
+    </div>
+    <div class="movie-gallery" id="movie-list">
+        <!-- 영화 목록은 JavaScript에서 동적으로 생성됩니다. -->
+    </div>
+    <div class="pagination" id="pagination">
+        <!-- 페이지 네비게이션 버튼과 페이지 번호는 JavaScript에서 동적으로 생성됩니다. -->
+    </div>
 </div>
-
-<!-- JavaScript 파일 -->
-<script src="scripts.js"></script>
+<script src="/js/rec_genre_2.js"></script>
 </body>
 </html>

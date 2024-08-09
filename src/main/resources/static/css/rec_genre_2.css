@@ -1,0 +1,183 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #E5E5E5; /* 배경색 */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url('/images/background_image.png'); /* 배경 이미지 경로 */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 로고 이미지 컨테이너 */
+.logo-container {
+    position: absolute;
+    z-index: 1; /* 헤더 위에 로고를 배치 */
+}
+
+/* 로고 이미지 스타일링 */
+#logo-image {
+    width: 170px; /* 로고 이미지 크기 조정 */
+    height: auto;
+}
+
+/* 기존 헤더 스타일 */
+header {
+    position: absolute;
+    top: 200px; /* 상단 여백 조정 */
+    left: 25px;
+    display: flex;
+    align-items: center;
+    z-index: 0; /* 로고 아래로 배치 */
+}
+
+/* 제목 스타일링 */
+header h1 {
+    font-size: 57px;
+    color: rgba(30, 30, 30, 1);
+    letter-spacing: -2.2px;
+    margin: 0;
+}
+
+/* 네비게이션 바 스타일링 */
+nav {
+    position: absolute;
+    top: 33px;
+    right: 170px;
+    display: flex;
+    align-items: center;
+    z-index: 10; /* 다른 요소 위로 올리기 위해 z-index 추가 */
+}
+
+.nav-item {
+    width: 82.62px;
+    height: 84.22px;
+    margin: 0 20px;
+    background: linear-gradient(0deg, rgba(198, 105, 78, 1) 0%, rgba(252, 207, 188, 0.78) 50.6%, rgba(246, 247, 233, 1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* 클릭 가능 커서 */
+}
+
+.nav-circle {
+    width: 67.69px;
+    height: 68.99px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav img {
+    width: 100%;
+    height: auto;
+}
+
+/* 소개 부분 스타일링 */
+.intro {
+    position: absolute;
+    top: 260px; /* 상단 여백 조정 */
+    left: 25px;
+    width: 90%;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    text-align: left; /* 왼쪽 정렬 */
+    margin: 0 auto;
+}
+
+/* 영화 갤러리 스타일링 */
+.movie-gallery {
+    position: absolute;
+    top: 360px; /* 상단 여백 조정 */
+    left: 50%; /* 화면 중앙에 위치시키기 위한 설정 */
+    transform: translateX(-50%); /* 정확히 중앙에 맞추기 위한 설정 */
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 한 줄에 6개씩 배치 */
+    gap: 10px; /* 포스터 사이 간격 */
+    justify-content: center; /* 가로 방향 중앙 정렬 */
+}
+
+/* 영화 아이템 스타일링 */
+.movie-item {
+    text-align: center; /* 제목 중앙 정렬 */
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* 포스터 최대 크기 */
+    border-radius: 10px; /* 둥근 모서리 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 애니메이션 */
+}
+
+.movie-item img:hover {
+    transform: scale(1.05); /* 마우스 오버 시 포스터 확대 효과 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 마우스 오버 시 그림자 효과 */
+}
+
+.movie-item p {
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    text-transform: capitalize; /* 첫 글자 대문자 */
+}
+
+.movie-item a {
+    text-decoration: none; /* 링크 기본 스타일 제거 */
+    color: inherit; /* 부모 요소의 색상 상속 */
+}
+
+.movie-item a:hover p {
+    color: #007BFF; /* 링크 호버 시 텍스트 색상 변경 */
+}
+
+/* 페이지 네비게이션 스타일링 */
+.pagination {
+    position: absolute;
+    bottom: 20px; /* 페이지 네비게이션 위치 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: #D8BFD8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* 페이지가 스크롤 가능하도록 설정 */
+html, body {
+    height: 100%;
+}
+
+.container {
+    overflow-y: auto; /* 수직 스크롤 활성화 */
+    max-height: 100vh; /* 최대 높이를 뷰포트 높이로 설정 */
+}

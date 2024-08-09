@@ -30,4 +30,9 @@ public class GenreController {
     public List<GenreDto> getMoviesByGenre(@PathVariable String genre) {
         return genreService.getMoviesByGenre(genre);
     }
+
+    @GetMapping("/rec_genre_2")
+    public String showGenrePage() {
+        return "rec_genre_2"; // src/main/resources/static/rec_genre_2.html 파일을 반환합니다.
+    }
 }
