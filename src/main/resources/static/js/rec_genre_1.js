@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // 영문 장르를 한글 장르로 매핑
+    const genreMap = {
+        "sf": "SF",
+        "family": "가족",
+        "horror": "공포",
+        "documentary": "다큐멘터리",
+        "drama": "드라마",
+        "romance": "로맨스",
+        "adventure": "모험",
+        "mystery": "미스터리",
+        "crime": "범죄",
+        "western": "서부",
+        "thriller": "스릴러",
+        "animation": "애니메이션",
+        "action": "액션",
+        "history": "역사",
+        "music": "음악",
+        "war": "전쟁",
+        "comedy": "코미디",
+        "fantasy": "판타지"
+    };
+
     const genreItems = document.querySelectorAll('.genre-item');
     const container = document.querySelector('.genre-selection');
     const containerWidth = container.clientWidth;
@@ -17,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function getRandomPosition() {
         return {
-            x: Math.random() * (containerWidth - itemWidth),
-            y: Math.random() * (containerHeight - itemHeight),
+            x: Math.random() * (containerWidth - itemWidth - padding),
+            y: Math.random() * (containerHeight - itemHeight - padding),
         };
     }
 
@@ -50,8 +72,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 occupiedPositions.push(position);
                 positions.push(position);
             } else {
-                console.warn(`Position generation failed for item ${i}`);
-                // 추가적인 처리를 여기에 추가할 수 있습니다.
+                // 위치 생성을 실패한 경우, 기본 위치에 배치
+                console.warn(`Position generation failed for item ${i}, assigning default position`);
+                const defaultX = (itemWidth + padding) * (i % maxX);
+                const defaultY = (itemHeight + padding) * Math.floor(i / maxX);
+                positions.push({ x: defaultX, y: defaultY });
             }
         }
         return positions;
@@ -73,8 +98,17 @@ document.addEventListener("DOMContentLoaded", function() {
             item.style.transform = `translate(${Math.random() * 10 - 5}px, ${Math.random() * 10 - 5}px)`;
 
             item.addEventListener('click', function() {
+                // 영문 장르 키를 추출
                 const selectedGenre = this.getAttribute('data-genre');
-                window.location.href = `/rec_genre_2?genre=${selectedGenre}`;
+                // 한글 장르명으로 변환
+                const koreanGenre = genreMap[selectedGenre];
+
+                if (koreanGenre) {
+                    // 한글 장르명을 URL에 포함
+                    window.location.href = `/rec_genre_2?genre=${encodeURIComponent(koreanGenre)}`;
+                } else {
+                    console.error('Genre not found in genreMap:', selectedGenre);
+                }
             });
         } else {
             console.error(`Position for genre-item ${index} is undefined`);
@@ -85,10 +119,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach((item, index) => {
         item.addEventListener('click', function() {
-            if (index === 0) {
-                window.location.href = '/rec_intro'; // 홈 버튼 클릭 시 /rec_intro로 이동
-            } else if (index === 1) {
-                window.location.href = '/search'; // 두 번째 nav-item 클릭 시 이동할 페이지
+            switch (index) {
+                case 0:
+                    window.location.href = '/rec_intro'; // 홈 버튼 클릭 시 /rec_intro로 이동
+                    break;
+                case 1:
+                    window.location.href = '/search'; // 두 번째 nav-item 클릭 시 이동할 페이지
+                    break;
+                default:
+                    console.warn('Unhandled nav-item index:', index);
             }
         });
     });
