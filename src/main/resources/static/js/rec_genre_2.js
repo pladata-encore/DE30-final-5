@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             movieItem.className = 'movie-item';
             movieItem.innerHTML = `
                 <a href="/movie_detail.html?id=${movie.id}">
-                    <img src="${movie.posterUrl}" alt="${movie.title}">
+                    <img src="${movie.posterurl}" alt="${movie.title}">
                     <p>${movie.title}</p>
                 </a>
             `;
