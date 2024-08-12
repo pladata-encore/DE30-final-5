@@ -165,7 +165,7 @@ nav img {
 /* 페이지 네비게이션 스타일링 */
 .pagination {
     position: absolute;
-    bottom: -1450px;
+    bottom: -1500px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
