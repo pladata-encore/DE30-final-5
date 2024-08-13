@@ -10,7 +10,8 @@
 | https://github.com/Kim-hee-su | https://github.com/standyujin |
 
 ## 프로젝트 개요
-![Uploading DE30-final-5_발표자료_moov.pptx.png…]()
+![DE30-final-5_발표자료_moov pptx](https://github.com/user-attachments/assets/5ad75c59-292e-44b1-a58e-7305a5164f38)
+
 
 🍿프로젝트 기획서🍿
 
