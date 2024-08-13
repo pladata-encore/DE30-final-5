@@ -4,6 +4,7 @@
 시연영상/(링크 or 영상)
 
 # 팀원 소개
+|---|---|---|
 | 김희수 | 기획, 웹개발, 데이터 | https://github.com/Kim-hee-su |
 |---|---|---|
 | 서유진 | 자연어처리, 웹개발, 기획 | https://github.com/standyujin |
