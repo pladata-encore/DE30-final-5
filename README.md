@@ -1,5 +1,5 @@
 ## 🎥 뭅(moov) - 자연어 처리 기반 영화 추천 서비스 🎬
-<img src='https://github.com/user-attachments/assets/539b5139-3e21-4d01-a9f4-e75799a6aee3' width=500px></img>
+<img src='https://github.com/user-attachments/assets/539b5139-3e21-4d01-a9f4-e75799a6aee3' width=300px></img>
 배포/(링크)
 시연영상/(링크 or 영상)
 
